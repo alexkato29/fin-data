@@ -37,16 +37,16 @@ public class JSONTest {
     {
         //Get row object within list
         JSONObject rowObject = (JSONObject) row.get("row");
-//        System.out.println(rowObject);
+
 
         String id = (String) rowObject.get("Security ID");
-        System.out.println(id);
+        System.out.println("Security ID:\t\t\t"+id);
 
         String description = (String) rowObject.get("Security Description");
-        System.out.println(description);
+        System.out.println("Security Description:\t" + description);
 
         String closingQty = (String) rowObject.get("Closing Qty");
-        System.out.println(closingQty);
+        System.out.println("Closing Qty:\t\t\t"+closingQty);
 
         System.out.println(" ");
     }
