@@ -1,13 +1,15 @@
 package GUI;
 
+import javafx.event.Event;
+import javafx.event.EventHandler;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class scenario2 implements ActionListener {
+public class scenario2 implements EventHandler {
 
     @Override
-    public void actionPerformed(ActionEvent e) {
-        System.out.println("Hello");
-    }
+    public void handle(Event event) {
 
+    }
 }
