@@ -1,5 +1,3 @@
-package GUI;
-
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
@@ -9,6 +7,8 @@ import javafx.stage.Stage;
 import javax.swing.*;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
 
 public class scenario1 implements EventHandler<ActionEvent> {
 
@@ -16,12 +16,29 @@ public class scenario1 implements EventHandler<ActionEvent> {
     public scenario1(Stage parent){
         this.parentStage = parent;
     }
-    @Override
-    public void handle(ActionEvent event) {
-        FileChooser fileChooser = new FileChooser();
-        File file = fileChooser.showOpenDialog(parentStage);
-        System.out.println(file.getAbsolutePath());
+
+
+
+
+    public void handle(ActionEvent event)  {
+
+        try {
+            FileChooser fileChooser = new FileChooser();
+            File file = fileChooser.showOpenDialog(parentStage);
+            ArrayList<Trade> tradeList = ReadCSV.csvParse(file.getAbsolutePath());
+
+
+
+        } catch (IOException e){
+            System.out.println("File Not Chosen");
+
+        }
+
     }
+
+}
+
+
 
 
 //    private JPanel parentWindow;
@@ -45,6 +62,6 @@ public class scenario1 implements EventHandler<ActionEvent> {
 //
 //        }
 //    }
-}
+
 
 
