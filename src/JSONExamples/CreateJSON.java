@@ -13,6 +13,8 @@ public class CreateJSON {
         row1Info.put("Security ID", "FCASH");
         row1Info.put("Security Description", "CASH");
         row1Info.put("Closing Qty", "1,438.06");
+        row1Info.put("Test Int Val", 10);
+        row1Info.put("Test Float Val", 10292.2);
 
         JSONObject row1 = new JSONObject();
         row1.put("row", row1Info);
