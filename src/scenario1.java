@@ -27,6 +27,12 @@ public class scenario1 implements EventHandler<ActionEvent> {
             File file = fileChooser.showOpenDialog(parentStage);
             ArrayList<Trade> tradeList = ReadCSV.csvParse(file.getAbsolutePath());
 
+            for (Trade trade: tradeList){
+                System.out.println(trade);
+
+            }
+
+
 
 
         } catch (IOException e){

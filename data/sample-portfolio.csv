@@ -1,0 +1,35 @@
+Account #,Account Source,FBSI Short Name,Custom Short Name,Primary Account Holder,Registration,Security ID,Security Description,Closing Quantity,Recent Quantity,Recent Price,Currency Code,Foreign Recent Price,Currency Code,Recent Market Value,Currency Code,Foreign Recent Market Value,Currency Code,Average Cost,Currency Code,Cost,Currency Code,Foreign Cost,Currency Code,% of Total,Gain/Loss,Currency Code,Foreign Gain/Loss,Currency Code,% Gain/Loss,,Closing Market Value,Currency Code,Foreign Closing Market Value,Currency Code,Account Type,Change since last close ($),Currency Code,Foreign Change since last close ($),Currency Code,Change since last close (%),Foreign Change since last close (%),As of Date & Time
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+123,Fidelity Brokerage,Bob,,,Individual (I),FCASH,CASH,"1,438.06","1,438.06",$1.00 ,USD,,,"$1,438.06 ",USD,,,,USD,,USD,,,1.97%,,USD,,,,,"$1,438.06 ",USD,,,Cash,$0.00 ,USD,,,0.00%,,08-Oct-2019 10:49 PM ET
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+123,Fidelity Brokerage,Bob,,,Individual (I),BOND,PIMCO ETF TR ACTIVE BD ETF,33,33,$108.84 ,USD,,,"$3,591.71 ",USD,,,$108.39 ,USD,"$3,577.17 ",USD,,,4.92%,$14.54 ,USD,,,0.40%,,"$3,596.01 ",USD,,,Cash,($4.30),USD,,,-0.11%,,08-Oct-2019 10:49 PM ET
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+123,Fidelity Brokerage,Bob,,,Individual (I),CWB,SPDR SERIES TRUST BLMBRG BRC CNVRT,55,55,$52.10 ,USD,,,"$2,865.74 ",USD,,,$51.73 ,USD,"$2,845.54 ",USD,,,3.93%,$20.20 ,USD,,,0.70%,,"$2,847.90 ",USD,,,Cash,$17.84 ,USD,,,0.62%,,08-Oct-2019 10:49 PM ET
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+123,Fidelity Brokerage,Bob,,,Individual (I),FDRXX,FIDELITY GOVERNMENT CASH RESERVES,"3,631.28","3,631.28",$1.00 ,USD,,,"$3,631.28 ",USD,,,,USD,,USD,,,4.98%,,USD,,,,,"$3,631.28 ",USD,,,Cash,$0.00 ,USD,,,0.00%,,08-Oct-2019 10:49 PM ET
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+123,Fidelity Brokerage,Bob,,,Individual (I),IJJ,ISHARES S&P MIDCAP 400 VALUE ETF,37,37,$153.92 ,USD,,,"$5,695.03 ",USD,,,$150.09 ,USD,"$5,553.52 ",USD,,,7.81%,$141.51 ,USD,,,2.54%,,"$5,651.01 ",USD,,,Cash,$44.02 ,USD,,,0.77%,,08-Oct-2019 10:49 PM ET
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+123,Fidelity Brokerage,Bob,,,Individual (I),IYC,ISHARES TRUST US CONSUMER SERVICES ETF USD DIS,6,6,$214.80 ,USD,,,"$1,288.80 ",USD,,,$212.80 ,USD,"$1,276.84 ",USD,,,1.77%,$11.96 ,USD,,,0.93%,,"$1,278.72 ",USD,,,Cash,$10.08 ,USD,,,0.78%,,08-Oct-2019 10:49 PM ET
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,Fidelity Brokerage,Bob,,,Individual (I),LQD,ISHARES IBOXX INVESTMENT GRADE CORPORATE BOND ETF,28,28,$127.46 ,USD,,,"$3,568.88 ",USD,,,$127.21 ,USD,"$3,562.01 ",USD,,,4.89%,$6.87 ,USD,,,0.19%,,"$3,570.28 ",USD,,,Cash,($1.40),USD,,,-0.03%,,08-Oct-2019 10:49 PM ET
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,Fidelity Brokerage,Bob,,,Individual (I),PCY,INVESCO EXCHNG TRADED FD TR II EMRNG MKT SVRG,74,74,$29.24 ,USD,,,"$2,163.76 ",USD,,,$29.01 ,USD,"$2,146.74 ",USD,,,2.97%,$17.02 ,USD,,,0.79%,,"$2,165.24 ",USD,,,Cash,($1.48),USD,,,-0.06%,,08-Oct-2019 10:49 PM ET
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,Fidelity Brokerage,Bob,,,Individual (I),QUAL,ISHARES EDGE MSCI USA QUALITY FACTOR ETF,39,39,$90.78 ,USD,,,"$3,540.42 ",USD,,,$89.88 ,USD,"$3,505.68 ",USD,,,4.85%,$34.74 ,USD,,,0.99%,,"$3,503.65 ",USD,,,Cash,$36.77 ,USD,,,1.04%,,08-Oct-2019 10:49 PM ET
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,Fidelity Brokerage,Bob,,,Individual (I),SCHO,SCHWAB STRATEGIC TR SHORT-TERM US TREASURY ETF,43,43,$50.66 ,USD,,,"$2,178.38 ",USD,,,$50.73 ,USD,"$2,181.40 ",USD,,,2.99%,($3.02),USD,,,-0.13%,,"$2,180.10 ",USD,,,Cash,($1.72),USD,,,-0.07%,,08-Oct-2019 10:49 PM ET
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,Fidelity Brokerage,Bob,,,Individual (I),TIP,ISHARES TIPS BOND ETF,31,31,$116.32 ,USD,,,"$3,605.92 ",USD,,,$116.35 ,USD,"$3,606.85 ",USD,,,4.94%,($0.93),USD,,,-0.02%,,"$3,615.22 ",USD,,,Cash,($9.30),USD,,,-0.25%,,08-Oct-2019 10:49 PM ET
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,Fidelity Brokerage,Bob,,,Individual (I),VTI,VANGUARD INDEX FDS VANGUARD TOTAL STK MKT ETF,82,82,$148.25 ,USD,,,"$12,156.50 ",USD,,,$136.31 ,USD,"$11,178.16 ",USD,,,16.67%,$978.34 ,USD,,,8.75%,,"$12,031.86 ",USD,,,Cash,$124.64 ,USD,,,1.03%,,08-Oct-2019 10:49 PM ET
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,Fidelity Brokerage,Bob,,,Individual (I),VTV,VANGUARD INDEX FDS VANGUARD VALUE ETF FORMERLY VANGUARD INDEX TR,66,66,$108.82 ,USD,,,"$7,181.84 ",USD,,,$102.79 ,USD,"$6,784.34 ",USD,,,9.85%,$397.50 ,USD,,,5.85%,,"$7,121.40 ",USD,,,Cash,$60.44 ,USD,,,0.84%,,08-Oct-2019 10:49 PM ET
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,Fidelity Brokerage,Bob,,,Individual (I),VUG,VANGUARD INDEX FDS VANGUARD GROWTH ETF FORMERLY VANGUARD INDEX TR VIPERS,35,35,$164.85 ,USD,,,"$5,769.75 ",USD,,,$162.05 ,USD,"$5,671.75 ",USD,,,7.91%,$98.00 ,USD,,,1.72%,,"$5,700.10 ",USD,,,Cash,$69.65 ,USD,,,1.22%,,08-Oct-2019 10:49 PM ET
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,Fidelity Brokerage,Bob,,,Individual (I),VYM,VANGUARD WHITEHALL FDS HIGH DIVIDEND YIELD ETF SHS,82,82,$86.49 ,USD,,,"$7,092.35 ",USD,,,$86.09 ,USD,"$7,059.80 ",USD,,,9.72%,$32.55 ,USD,,,0.46%,,"$7,038.88 ",USD,,,Cash,$53.47 ,USD,,,0.75%,,08-Oct-2019 10:49 PM ET
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,Fidelity Brokerage,Bob,,,Individual (I),XLK,SELECT SECTOR SPDR TRUST TECHNOLOGY SELECT SECTOR USD DIS,54,54,$80.03 ,USD,,,"$4,321.87 ",USD,,,$78.29 ,USD,"$4,227.75 ",USD,,,5.93%,$94.12 ,USD,,,2.22%,,"$4,251.96 ",USD,,,Cash,$69.91 ,USD,,,1.64%,,08-Oct-2019 10:49 PM ET
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,Fidelity Brokerage,Bob,,,Individual (I),XLV,SELECT SECTOR SPDR TR HEALTH CARE FORMERLY CONSUMER SVCS TO 06/24/2002,32,32,$88.76 ,USD,,,"$2,840.32 ",USD,,,$88.18 ,USD,"$2,822.07 ",USD,,,3.89%,$18.25 ,USD,,,0.64%,,"$2,819.84 ",USD,,,Cash,$20.48 ,USD,,,0.72%,,08-Oct-2019 10:49 PM ET

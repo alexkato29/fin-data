@@ -24,6 +24,8 @@ public class javafxgui extends Application {
         Button optn2 = new Button("Scenario 2");
         Button optn3 = new Button("Scenario 3");
         Button optn4 = new Button("Scenario 4");
+
+
         optn1.setOnAction(new scenario1(primaryStage));
 
 
