@@ -4,10 +4,10 @@ public class Trade {
     private String accountNum;
     private String registration;
     private String ticker;
-    private int quantityPurchased;  // closing quanitity
+    private double quantityPurchased;  // closing quanitity
     private double price;
 
-    public Trade(String accountNum, String registration, String ticker, int quantityPurchased, double price) {
+    public Trade(String accountNum, String registration, String ticker, double quantityPurchased, double price) {
         this.accountNum = accountNum;
         this.registration = registration;
         this.ticker = ticker;
@@ -39,7 +39,7 @@ public class Trade {
         this.ticker = ticker;
     }
 
-    public int getQuantityPurchased() {
+    public double getQuantityPurchased() {
         return quantityPurchased;
     }
 
@@ -53,5 +53,12 @@ public class Trade {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    @Override
+    public String toString(){
+        return "Account #: " + accountNum + "\nRegistration: " + registration + "\nTicker: " + ticker + "\nQuantity Purchased: " + quantityPurchased +"\nPrice: " + price + "\n";
+
+
     }
 }
