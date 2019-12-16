@@ -90,7 +90,7 @@ public class CSVtoJSON extends JFrame {
                     }
                 }
                 else{
-                    //line = read.readLine(); //read next line if wish to continue parsing despite error
+                    //read next line if wish to continue parsing despite error
                     JOptionPane.showMessageDialog(this, "ERROR: Formatting error line " + (progress + 2)
                                     + ". Failed to parse.",
                             "System Dialog", JOptionPane.PLAIN_MESSAGE);
