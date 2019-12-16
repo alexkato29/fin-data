@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Map;
 
 /**
  * Created by AlexKatopodis on 12/5/19.
@@ -7,10 +8,10 @@ public class Portfolio {
     private String accountNum;
     private String accountHolder;
     private boolean isIndividual;
-    private ArrayList<Security> securities;
+    private Map<String, Security> securities;
     private double portfolioValue;
 
-    public Portfolio (String accountNum, String accountHolder, boolean isIndividual, ArrayList<Security> securities, double portfolioValue) {
+    public Portfolio (String accountNum, String accountHolder, boolean isIndividual, Map<String, Security> securities, double portfolioValue) {
         this.accountNum = accountNum;
         this.accountHolder = accountHolder;
         this.isIndividual = isIndividual;
@@ -41,19 +42,18 @@ public class Portfolio {
     }
 
     // Managing Securities
-    public ArrayList<Security> getSecurities() {
+    public Map<String, Security> getSecurities() {
         return securities;
     }
 
     public void addSecurity(Security newSec) {
-        for (Security existingSec : securities) {
-            if (existingSec.equals(newSec)) {
-                existingSec.setPrice(newSec.getPrice());
-                existingSec.changeQuantity(newSec.getQuantity());
-                return;
-            }
+        Security tempSec = securities.get(newSec.getTicker());
+        if (tempSec != null) {
+            tempSec.changeQuantity(newSec.getQuantity());
+            tempSec.setPrice(newSec.getPrice());
+            return;
         }
-        securities.add(newSec);
+        securities.put(tempSec.getTicker(), tempSec);
     }
 
     // Valuing the Portfolio
@@ -63,8 +63,10 @@ public class Portfolio {
 
     public void calcPortfolioValue() {
         double newVal = 0;
-        for (Security s : securities)
+        for (Map.Entry security : securities.entrySet()) {
+            Security s = (Security) security.getValue();
             newVal += (s.getPrice() * s.getQuantity());
+        }
         portfolioValue = newVal;
     }
 
