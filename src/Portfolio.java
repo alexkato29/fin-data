@@ -67,4 +67,6 @@ public class Portfolio {
             newVal += (s.getPrice() * s.getQuantity());
         portfolioValue = newVal;
     }
+
+
 }
