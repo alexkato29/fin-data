@@ -22,7 +22,7 @@ public class scenario1 implements EventHandler<ActionEvent> {
         try {
             FileChooser fileChooser = new FileChooser();
             File file = fileChooser.showOpenDialog(parentStage);
-            tradeList = ReadCSV.csvParse(file.getAbsolutePath());
+            tradeList = readData.csvParse(file.getAbsolutePath());
 
             for (Trade trade: tradeList){
                 System.out.println(trade);

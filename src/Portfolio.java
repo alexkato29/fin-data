@@ -69,4 +69,9 @@ public class Portfolio {
         }
         portfolioValue = newVal;
     }
+
+    @Override
+    public String toString() {
+        return super.toString();
+}
 }

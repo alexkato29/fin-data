@@ -1,17 +1,16 @@
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
 
 
-public class jsonData implements EventHandler<ActionEvent> {
+public class portfolioScene implements EventHandler<ActionEvent> {
 
 
     private Stage masterWindow;
 
-    public jsonData(Stage masterWindow) {
+    public portfolioScene(Stage masterWindow) {
         this.masterWindow = masterWindow;
 
     }
