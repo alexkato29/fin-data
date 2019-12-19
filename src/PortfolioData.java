@@ -1,4 +1,4 @@
-package JSONExamples;
+
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -7,7 +7,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class TradeToJSON {
+
+public class PortfolioData   {
     public static void main(String[] args) {
         //account#
         //registration
@@ -15,11 +16,11 @@ public class TradeToJSON {
         //qty purchased
         //price
 
-        //ADD COMMIT PUSH; pull is just pull
+        //
 
-        ArrayList trades = new ArrayList();
-        JSONArray jsontrades = new JSONArray();
 
+        ArrayList portfolioarray = new ArrayList();
+        JSONArray portfolios = new JSONArray();
 
 
         String acc = "";
@@ -29,7 +30,7 @@ public class TradeToJSON {
         double price = 0;
 
 
-        for (int i = 0; i<trades.size(); i++){
+        for (int i = 0; i<portfolioarray.size(); i++){
             JSONObject tradeobj = new JSONObject();
             JSONObject tradeobjinfo = new JSONObject();
 
@@ -39,8 +40,8 @@ public class TradeToJSON {
             tradeobjinfo.put("Qty. Purchased", qtypurchased);
             tradeobjinfo.put("Price", price);
 
-            tradeobj.put("row", tradeobjinfo);
-            jsontrades.add(tradeobj);
+            tradeobj.put("Portfolio", tradeobjinfo);
+            portfolios.add(tradeobj);
 
 
         }
@@ -55,15 +56,15 @@ public class TradeToJSON {
         row2Info.put("Closing Qty", "33");
 
         JSONObject row2 = new JSONObject();
-        row2.put("row", row2Info);
-        jsontrades.add(row2);
+        row2.put("Portfolio", row2Info);
+        portfolios.add(row2);
 
 
 
 
-        try (FileWriter file = new FileWriter("TradeObjectData.json")) {
+        try (FileWriter file = new FileWriter("PortfolioData.json")) {
 
-            file.write(jsontrades.toJSONString());
+            file.write(portfolios.toJSONString());
             file.flush();
 
         } catch (IOException e) {
