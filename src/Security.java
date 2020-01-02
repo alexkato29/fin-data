@@ -3,8 +3,8 @@
  */
 public class Security {
     private String ticker;
-    private int quantity;
-    private float price; // This price is the most recent price.  Most recent is defined by whatever the price was last time it was traded.
+    private double quantity;
+    private double price; // This price is the most recent price.  Most recent is defined by whatever the price was last time it was traded.
 
     public Security (String ticker, int quantity, float lastPrice) {
         this.ticker = ticker;
@@ -13,20 +13,20 @@ public class Security {
     }
 
     // Quantities
-    public int getQuantity () {
+    public double getQuantity () {
         return quantity;
     }
 
-    public void changeQuantity (int quantity) {
+    public void changeQuantity (double quantity) {
         this.quantity += quantity;
     }
 
     // Prices
-    public float getPrice () {
+    public double getPrice () {
         return price;
     }
 
-    public void setPrice (float price) {
+    public void setPrice (double price) {
         this.price = price;
     }
 
