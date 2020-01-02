@@ -9,9 +9,6 @@ import javafx.stage.Stage;
 // Scene = stuff inside the window
 
 public class javafxgui extends Application {
-
-
-
     public static void main(String[] args) {
         launch(args);
     }
@@ -28,9 +25,6 @@ public class javafxgui extends Application {
 
         optn1.setOnAction(new scenario1(primaryStage));
 
-
-
-
         GridPane grid = new GridPane();
         grid.setHgap(10);
         grid.setVgap(10);
@@ -41,10 +35,6 @@ public class javafxgui extends Application {
         grid.add(optn4, 3, 0);
 
         grid.setAlignment(Pos.CENTER);
-
-
-
-
 
         Scene scene = new Scene(grid, 350, 150);
         primaryStage.setScene(scene);

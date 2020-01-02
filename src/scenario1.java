@@ -28,10 +28,6 @@ public class scenario1 implements EventHandler<ActionEvent> {
                 System.out.println(trade);
 
             }
-
-
-
-
         } catch (IOException e){
             System.out.println("File Not Chosen");
         }
