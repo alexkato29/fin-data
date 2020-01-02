@@ -20,6 +20,7 @@ public class ReadCSV {
 
     public static ArrayList<Trade> csvParse(String tradeFilePath) throws IOException {
         ArrayList<Trade> csvTrades = new ArrayList<>();
+
         try{
             Reader reader = Files.newBufferedReader(Paths.get(tradeFilePath));
             CSVParser csvParser = new CSVParser(reader, CSVFormat.DEFAULT);
@@ -38,10 +39,7 @@ public class ReadCSV {
 
                     csvTrades.add(new Trade(accountNum, registration, ticker, quantity, price));
 
-
-
                 }
-
 
 
             }
