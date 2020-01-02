@@ -13,7 +13,7 @@ public class JSONTest {
     public static void main(String[] args) {
         JSONParser parser = new JSONParser();
 
-        try (FileReader reader = new FileReader("newJSON.json"))
+        try (FileReader reader = new FileReader("portfolios.json"))
         {
             //Read JSON file
             Object obj = parser.parse(reader);

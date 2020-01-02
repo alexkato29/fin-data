@@ -45,7 +45,6 @@ public class readData {
 
                 }
 
-
             }
         } catch (IOException e){
             System.out.println("You must pick a file");
@@ -54,8 +53,6 @@ public class readData {
     }
 
     public static void jsonParse(){
-
-
             JSONParser parser = new JSONParser();
 
             try (Reader reader = new FileReader("c:\\projects\\test.json")) {

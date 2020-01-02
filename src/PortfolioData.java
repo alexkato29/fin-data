@@ -48,8 +48,6 @@ public class PortfolioData   {
 
 
 
-
-
         JSONObject row2Info = new JSONObject();
         row2Info.put("Security ID", "BOND");
         row2Info.put("Security Description", "PIMCO ETF TR ACTIVE BD ETF");
