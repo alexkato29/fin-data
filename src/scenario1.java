@@ -24,13 +24,17 @@ public class scenario1 implements EventHandler<ActionEvent> {
             File file = fileChooser.showOpenDialog(parentStage);
             tradeList = readData.csvParse(file.getAbsolutePath());
 
-            for (Trade trade: tradeList){
-                System.out.println(trade);
+            readData.jsonUpdate(".\\data\\newJSON.json", tradeList);
 
-            }
+//            for (Trade trade: tradeList){
+//                System.out.println(trade);
+//            }
         } catch (IOException e){
             System.out.println("File Not Chosen");
         }
+
+
+
 
 
 
