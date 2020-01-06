@@ -24,6 +24,7 @@ public class javafxgui extends Application {
 
 
         optn1.setOnAction(new scenario1(primaryStage));
+        optn2.setOnAction(new );
 
         GridPane grid = new GridPane();
         grid.setHgap(10);

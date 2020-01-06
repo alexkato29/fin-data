@@ -33,7 +33,7 @@ public class scenario1 implements EventHandler<ActionEvent> {
         }
 
 
-//        PortfolioUpdate.update(tradeList);
+
 
     }
 

@@ -1,0 +1,54 @@
+{
+    "portfolios":[
+        {
+            "accountNum": "123",
+            "isIndividual": true,
+            "securities": {
+                "TSLA": {
+                    "quantity": 1,
+                    "price": 1.99
+                },
+                "AAPL": {
+                    "quantity": 1,
+                    "price": 1.99
+                }
+            },
+            "portfolioValue": 3.98
+        },
+        {
+            "accountNum": "123",
+            "isIndividual": true,
+            "securities": {
+                "TSLA": {
+                    "quantity": 1,
+                    "price": 1.99
+                },
+                "AAPL": {
+                    "quantity": 1,
+                    "price": 1.99
+                }
+            },
+            "portfolioValue": 3.98
+        },
+        {
+            "accountNum": "123",
+            "isIndividual": true,
+            "securities": {
+                "TSLA": {
+                    "quantity": 1,
+                    "price": 1.99
+                },
+                "AAPL": {
+                    "quantity": 1,
+                    "price": 1.99
+                }
+            },
+            "portfolioValue": 3.98
+        }
+
+    ]
+
+
+
+
+}
