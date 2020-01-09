@@ -28,7 +28,7 @@ public class testjson {
                         JSONObject company = (JSONObject) securities.get(trade.getTicker());
                         System.out.println(trade.getTicker() + " " + company);
 
-                        double newQuantity = (long)company.get("quantity") + trade.getQuantityPurchased();
+                        double newQuantity = (long)company.get("quantity") + trade.getQuantity();
                         double newPrice = trade.getPrice();
                         company.put("quantity", 9999);
                         company.put("price", 9999);

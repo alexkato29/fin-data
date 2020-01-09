@@ -35,6 +35,18 @@ public class Trade {
         security = new Security (ticker, price, quantityPurchased);
     }
 
+    public String getTicker () {
+        return security.getTicker();
+    }
+
+    public double getPrice () {
+        return security.getPrice();
+    }
+
+    public double getQuantity () {
+        return security.getQuantity();
+    }
+
     @Override
     public String toString(){
         return "Account #: " + accountNum + "\nRegistration: " + registration + "\nTicker: " + security.getTicker() + "\nQuantity Purchased: " + security.getQuantity() +"\nPrice: " + security.getPrice() + "\n";
