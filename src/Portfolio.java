@@ -69,4 +69,9 @@ public class Portfolio {
         }
         portfolioValue = newVal;
     }
+
+    public void applyTrade (Trade t) {
+        addSecurity(t.getSecurity());
+        calcPortfolioValue();
+    }
 }

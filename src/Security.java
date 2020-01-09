@@ -6,7 +6,7 @@ public class Security {
     private double quantity;
     private double price; // This price is the most recent price.  Most recent is defined by whatever the price was last time it was traded.
 
-    public Security (String ticker, int quantity, float lastPrice) {
+    public Security (String ticker, double quantity, double lastPrice) {
         this.ticker = ticker;
         this.quantity = quantity;
         this.price = lastPrice;
