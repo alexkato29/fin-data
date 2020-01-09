@@ -42,13 +42,7 @@ public class readData {
                     double price = Double.parseDouble(csvRecord.get(10).replaceAll("\\$","").replaceAll(",", ""));
 
                     csvTrades.add(new Trade(accountNum, registration, ticker, quantity, price));
-
-
-
                 }
-
-
-
             }
         } catch (IOException e){
             System.out.println("You must pick a file");
