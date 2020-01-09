@@ -12,6 +12,7 @@ import org.json.simple.parser.ParseException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
+import java.lang.reflect.Array;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -55,35 +56,49 @@ public class readData {
         return csvTrades;
     }
 
-    public static void jsonParse(){
+    public static void jsonUpdate(String jsonDBFilePath, ArrayList<Trade> tradeList){
 
+        try (Reader reader = new FileReader(".\\data\\newJSON.json")) {
 
             JSONParser parser = new JSONParser();
+            JSONObject data = (JSONObject) parser.parse(reader);
+            JSONArray portfolios = (JSONArray) data.get("portfolios");
 
-            try (Reader reader = new FileReader("c:\\projects\\test.json")) {
+            System.out.println(portfolios);
+            for (int i = 0; i < portfolios.size(); i++){
+                JSONObject account = (JSONObject) portfolios.get(i);
+                for (int j = 0; j < tradeList.size(); j++){
+                    Trade trade = tradeList.get(j);
+                    if (account.get("accountNum").equals(trade.getAccountNum())) {
+                        JSONObject securities = (JSONObject) account.get("securities");
 
-                JSONObject jsonObject = (JSONObject) parser.parse(reader);
-                System.out.println(jsonObject);
+                        securities.get(trade.getTicker());
 
-                String name = (String) jsonObject.get("name");
-                System.out.println(name);
+                    }
 
-                long age = (Long) jsonObject.get("age");
-                System.out.println(age);
 
-                // loop array
-                JSONArray msg = (JSONArray) jsonObject.get("messages");
-                Iterator<String> iterator = msg.iterator();
-                while (iterator.hasNext()) {
-                    System.out.println(iterator.next());
+
                 }
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (ParseException e) {
-            e.printStackTrace();
+            }
         }
+
+        catch (IOException e) {
+            e.printStackTrace();
+        } catch (ParseException e1) {
+            e1.printStackTrace();
+        }
+
+
+//            @SuppressWarnings("resource")
+//            FileWriter file = new FileWriter(".\\testdata\\TC_11.json");
+//            file.write(data.toJSONString());
+//            file.flush();
+
+        }
+
+
+
 
     }
 
-}
+
