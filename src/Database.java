@@ -11,14 +11,14 @@ public class Database {
         this.pathToFile = pathToFile;
     }
 
-    public Portfolio getPortfolio (String accountNum) {
-    }
+//    public Portfolio getPortfolio (String accountNum) {
+//    }
+//
+//    public boolean updatePortfolio (Portfolio p) {
+//        return isSuccessful;
+//    }
 
-    public boolean updatePortfolio (Portfolio p) {
-        return isSuccessful;
-    }
-
-    public boolean newPortfolio (Portfolio p) {
-        return isSuccessful;
-    }
+//    public boolean newPortfolio (Portfolio p) {
+//        return isSuccessful;
+//    }
 }
