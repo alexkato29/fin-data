@@ -9,6 +9,8 @@ import java.util.ArrayList;
 public class testjson {
 
     public static void main(String[] args) {
+
+
         try (Reader reader = new FileReader(".\\data\\testJSON.json")) {
 
             JSONParser parser = new JSONParser();
