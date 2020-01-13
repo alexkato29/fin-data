@@ -11,6 +11,7 @@ import java.util.ArrayList;
 public class scenario1 implements EventHandler<ActionEvent> {
 
     private Stage parentStage;
+    private final  String DATABASEFILEPATH = ".\\data\\newJSON.json";
     public scenario1(Stage parent){
         this.parentStage = parent;
     }
@@ -22,13 +23,11 @@ public class scenario1 implements EventHandler<ActionEvent> {
         try {
             FileChooser fileChooser = new FileChooser();
             File file = fileChooser.showOpenDialog(parentStage);
+
             tradeList = readData.csvParse(file.getAbsolutePath());
+            readData.jsonUpdate(DATABASEFILEPATH, tradeList);
 
-            readData.jsonUpdate(".\\data\\newJSON.json", tradeList);
 
-//            for (Trade trade: tradeList){
-//                System.out.println(trade);
-//            }
         } catch (IOException e){
             System.out.println("File Not Chosen");
         }
