@@ -31,15 +31,7 @@ public class scenario1 implements EventHandler<ActionEvent> {
         } catch (IOException e){
             System.out.println("File Not Chosen");
         }
-
-
-
-
-
-
-
     }
-
 }
 
 

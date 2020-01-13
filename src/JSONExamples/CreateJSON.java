@@ -34,7 +34,7 @@ public class CreateJSON {
         rows.add(row2);
 
 
-        try (FileWriter file = new FileWriter("newJSON.json")) {
+        try (FileWriter file = new FileWriter("portfolios.json")) {
 
             file.write(rows.toJSONString());
             file.flush();

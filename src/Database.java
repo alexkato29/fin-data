@@ -12,14 +12,13 @@ public class Database {
     }
 
     public Portfolio getPortfolio (String accountNum) {
-        return null;
     }
 
     public boolean updatePortfolio (Portfolio p) {
-        return true;
+        return isSuccessful;
     }
 
     public boolean newPortfolio (Portfolio p) {
-        return true;
+        return isSuccessful;
     }
 }
