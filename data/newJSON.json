@@ -1,0 +1,24 @@
+{
+    "portfolios":[
+        {
+            "accountNum": "123",
+            "isIndividual": true,
+            "securities": {
+                "FCASH": {
+                    "quantity": 1,
+                    "price": 1.99
+                },
+                "FDRXX": {
+                    "quantity": 1,
+                    "price": 1.99
+                }
+            },
+            "portfolioValue": 3.98
+        }
+    
+    ]
+
+
+
+
+}
