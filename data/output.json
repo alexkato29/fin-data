@@ -1,1 +1,31 @@
-{"portfolios":[{"accountNum":"123","isIndividual":true,"portfolioValue":3.98,"securities":{"FCASH":{"quantity":9999,"price":9999},"FDRXX":{"quantity":1,"price":1.99}}},{"accountNum":"456","isIndividual":true,"portfolioValue":3.98,"securities":{"AAPL":{"quantity":9999,"price":9999},"TSLA":{"quantity":9999,"price":9999}}}]}
+{
+    "portfolios": [{
+        "accountNum": "123",
+        "isIndividual": true,
+        "portfolioValue": 3.98,
+        "securities": {
+            "FCASH": {
+                "quantity": 9999,
+                "price": 9999
+            },
+            "FDRXX": {
+                "quantity": 1,
+                "price": 1.99
+            }
+        }
+    }, {
+        "accountNum": "456",
+        "isIndividual": true,
+        "portfolioValue": 3.98,
+        "securities": {
+            "AAPL": {
+                "quantity": 9999,
+                "price": 9999
+            },
+            "TSLA": {
+                "quantity": 9999,
+                "price": 9999
+            }
+        }
+    }]
+}

@@ -61,21 +61,18 @@ public class readData {
 
 
 
-            System.out.println(data);
+
             for (int i = 0; i < portfolios.size(); i++){
                 JSONObject account = (JSONObject) portfolios.get(i);
                 for (int j = 0; j < tradeList.size(); j++){
                     Trade trade = tradeList.get(j);
-//                    System.out.println(account.get("securities") + " = " + trade.getTicker());
                     if (account.get("accountNum").equals(trade.getAccountNum())) {
                         JSONObject securities = (JSONObject) account.get("securities");
 
                         JSONObject company = (JSONObject) securities.get(trade.getTicker());
-//                        System.out.println(trade.getTicker() + " " + company);
-
                         double newQuantity = (long)company.get("quantity") + trade.getQuantity();
                         double newPrice = trade.getPrice();
-                        System.out.println();
+
                         company.put("quantity", 9999);
                         company.put("price", 9999);
                     }
@@ -85,6 +82,7 @@ public class readData {
             FileWriter file = new FileWriter(".\\data\\output.json", true);
             try {
                 file.write(data.toJSONString());
+                System.out.println("Portfolio Updated");
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -102,10 +100,6 @@ public class readData {
             e1.printStackTrace();
         }
 
-//            @SuppressWarnings("resource")
-//            FileWriter file = new FileWriter(".\\testdata\\TC_11.json");
-//            file.write(data.toJSONString());
-//            file.flush();
 
         }
 
