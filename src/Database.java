@@ -49,8 +49,9 @@ public class Database {
         }
     }
 
-//    public Portfolio getPortfolio (String accountNum) {
-//    }
+    public Portfolio getPortfolio (String accountNum) {
+        return portfolios.get(accountNum);
+    }
 //
 //    public boolean updatePortfolio (Portfolio p) {
 //        return isSuccessful;
