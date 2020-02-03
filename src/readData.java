@@ -13,7 +13,9 @@ import java.io.IOException;
 import java.io.Reader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 
 public class readData {
@@ -72,7 +74,9 @@ public class readData {
                 }
             }
 
-            FileWriter file = new FileWriter(".\\data\\output.json", true);
+            String fileName = new SimpleDateFormat("yyyy-MM-dd_HH-mm'.json'").format(new Date());
+            FileWriter file = new FileWriter(".\\data\\" + fileName, false);
+
 
             try {
                 file.write(data.toJSONString());

@@ -1,4 +1,5 @@
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
@@ -7,10 +8,12 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 // Javafx.stage = Window
 // Scene = stuff inside the window
@@ -25,8 +28,11 @@ public class javafxgui extends Application {
         primaryStage.setTitle("Portfolio Management");
 
         FileChooser fileChooser = new FileChooser();
+
+
         String database_file_path = fileChooser.showOpenDialog(primaryStage).getAbsolutePath();
-        Database portfolio_database = new Database(database_file_path);
+//        Database portfolioDatabase = new Database(database_file_path);
+        System.out.println("Database has been uploaded");
 
         Button optn1 = new Button("Scenario 1");
         Button optn2 = new Button("Scenario 2");
@@ -34,7 +40,25 @@ public class javafxgui extends Application {
         Button optn4 = new Button("Scenario 4");
 
 
-        optn1.setOnAction(new scenario1(primaryStage));
+        optn1.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event)  {
+
+                ArrayList<Trade> tradeList;
+
+                try {
+                    FileChooser fileChooser = new FileChooser();
+                    File file = fileChooser.showOpenDialog(primaryStage);
+
+                    tradeList = readData.csvParse(file.getAbsolutePath());
+                    readData.jsonUpdate(database_file_path, tradeList);
+                    // Above Line should be portfolioDatabase.update(tradeList)
+
+                } catch (IOException e){
+                    System.out.println("File Not Chosen");
+                }
+            }
+        });
         optn2.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -45,7 +69,6 @@ public class javafxgui extends Application {
                     File file = fileChooser.showOpenDialog(primaryStage);
 
                     tradeList = readData.csvParse(file.getAbsolutePath());
-//                    portfolio_database.update(tradeList);
 
 
 
@@ -73,6 +96,35 @@ public class javafxgui extends Application {
         primaryStage.show();
 
 
+//      At the close write the new database into a new JSON File
+
+        primaryStage.setOnHiding(new EventHandler<WindowEvent>() {
+
+            @Override
+            public void handle(WindowEvent event) {
+                Platform.runLater(new Runnable() {
+
+                    @Override
+                    public void run() {
+                        System.out.println("Creating Database and exiting...");
+
+//                        portfolio_database
+//
+//                        Iterator it = mp.entrySet().iterator();
+//                        while (it.hasNext()) {
+//                            Map.Entry pair = (Map.Entry)it.next();
+//                            System.out.println(pair.getKey() + " = " + pair.getValue());
+//                            it.remove(); // avoids a ConcurrentModificationException
+//                        }
+
+
+
+
+                        System.exit(0);
+                    }
+                });
+            }
+        });
 
     }
 
