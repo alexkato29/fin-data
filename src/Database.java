@@ -31,21 +31,7 @@ public class Database {
             System.out.println(data);
             for (int i = 0; i < portfolios.size(); i++){
                 JSONObject account = (JSONObject) portfolios.get(i);
-                for (int j = 0; j < tradeList.size(); j++){
-                    Trade trade = tradeList.get(j);
 
-                    if (account.get("accountNum").equals(trade.getAccountNum())) {
-                        JSONObject securities = (JSONObject) account.get("securities");
-
-                        JSONObject company = (JSONObject) securities.get(trade.getTicker());
-
-                        double newQuantity = (long)company.get("quantity") + trade.getQuantity();
-                        double newPrice = trade.getPrice();
-                        System.out.println();
-                        company.put("quantity", newQuantity);
-                        company.put("price", newPrice);
-                    }
-                }
             }
 
             FileWriter file = new FileWriter(".\\data\\output.json", true);
@@ -65,14 +51,15 @@ public class Database {
         }
     }
 
-//    public Portfolio getPortfolio (String accountNum) {
+    public Portfolio getPortfolio (String accountNum) {
+        return null;
+    }
+
+//    public boolean updatePortfolio (Portfolio p) {
+//        return false;
 //    }
 //
-//    public boolean updatePortfolio (Portfolio p) {
-//        return isSuccessful;
-//    }
-
 //    public boolean newPortfolio (Portfolio p) {
-//        return isSuccessful;
+//        return false;
 //    }
 }

@@ -25,8 +25,10 @@ public class javafxgui extends Application {
         primaryStage.setTitle("Portfolio Management");
 
         FileChooser fileChooser = new FileChooser();
+
+
         String database_file_path = fileChooser.showOpenDialog(primaryStage).getAbsolutePath();
-        Database portfolio_database = new Database(database_file_path);
+        Database portfolioDatabse = new Database(database_file_path);
 
         Button optn1 = new Button("Scenario 1");
         Button optn2 = new Button("Scenario 2");
@@ -34,7 +36,25 @@ public class javafxgui extends Application {
         Button optn4 = new Button("Scenario 4");
 
 
-        optn1.setOnAction(new scenario1(primaryStage));
+        optn1.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event)  {
+
+                ArrayList<Trade> tradeList;
+
+                try {
+                    FileChooser fileChooser = new FileChooser();
+                    File file = fileChooser.showOpenDialog(primaryStage);
+
+                    tradeList = readData.csvParse(file.getAbsolutePath());
+                    readData.jsonUpdate(database_file_path, tradeList);
+                    // Above Line should be portfolioDatabase.update(tradeList)
+
+                } catch (IOException e){
+                    System.out.println("File Not Chosen");
+                }
+            }
+        });
         optn2.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -45,7 +65,6 @@ public class javafxgui extends Application {
                     File file = fileChooser.showOpenDialog(primaryStage);
 
                     tradeList = readData.csvParse(file.getAbsolutePath());
-//                    portfolio_database.update(tradeList);
 
 
 
@@ -73,6 +92,7 @@ public class javafxgui extends Application {
         primaryStage.show();
 
 
+//      At the close write the new database into a new JSON File
 
     }
 
