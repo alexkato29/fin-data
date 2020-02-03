@@ -7,22 +7,18 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-
-
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Reader;
-import java.lang.reflect.Array;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Iterator;
+
 
 public class readData {
 
     private final int ACCOUNT_NUM_COL = 0;
-
 
     public static ArrayList<Trade> csvParse(String tradeFilePath) throws IOException {
         ArrayList<Trade> csvTrades = new ArrayList<>();
@@ -53,7 +49,7 @@ public class readData {
 
     public static void jsonUpdate(String jsonDBFilePath, ArrayList<Trade> tradeList){
 
-        try (Reader reader = new FileReader(".\\data\\testJSON.json")) {
+        try (Reader reader = new FileReader(jsonDBFilePath)) {
 
             JSONParser parser = new JSONParser();
             JSONObject data = (JSONObject) parser.parse(reader);
