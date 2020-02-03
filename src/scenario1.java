@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class scenario1 implements EventHandler<ActionEvent> {
 
     private Stage parentStage;
-    private final  String DATABASEFILEPATH = ".\\data\\newJSON.json";
+    private final  String DATABASEFILEPATH = ".\\data\\testJSON.json";
     public scenario1(Stage parent){
         this.parentStage = parent;
     }

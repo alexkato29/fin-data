@@ -53,14 +53,11 @@ public class readData {
 
     public static void jsonUpdate(String jsonDBFilePath, ArrayList<Trade> tradeList){
 
-        try (Reader reader = new FileReader(".\\data\\testJSON.json")) {
+        try (Reader reader = new FileReader(jsonDBFilePath)) {
 
             JSONParser parser = new JSONParser();
             JSONObject data = (JSONObject) parser.parse(reader);
             JSONArray portfolios = (JSONArray) data.get("portfolios");
-
-
-
 
             for (int i = 0; i < portfolios.size(); i++){
                 JSONObject account = (JSONObject) portfolios.get(i);
@@ -80,6 +77,7 @@ public class readData {
             }
 
             FileWriter file = new FileWriter(".\\data\\output.json", true);
+
             try {
                 file.write(data.toJSONString());
                 System.out.println("Portfolio Updated");
