@@ -17,7 +17,7 @@ import java.util.Map;
  */
 public class Database {
     private String pathToFile;
-    private HashMap<String, Portfolio> portfolios;
+    private HashMap<String, Portfolio> portfolios = new HashMap<String,Portfolio>();
 
     public Database (String pathToFile) {
         this.pathToFile = pathToFile;
@@ -35,12 +35,15 @@ public class Database {
                 double portfolioValue = (double) p.get("portfolioValue");
                 JSONObject securityData = (JSONObject) p.get("securities");
                 Map<String, Security> securities = new HashMap<String, Security>();
-                for (int j = 0; j < securityData.size(); j++) {
-                    Security security = securities.get(j);
-                    securities.put(security.getTicker(), security);
+                for (Integer j = 0; j < securityData.size(); j++) {
+                    JSONObject security = (JSONObject) securityData.get(j.toString());
+                    String tickerName = security.get("tickerName").toString();
+                    double quantity = (double) security.get("quantity");
+                    double price = (double) security.get("price");
+                    securities.put(tickerName, new Security(tickerName, quantity, price));
                 }
                 Portfolio newPortfolio = new Portfolio(accountNum, accountHolder, isIndividual, securities, portfolioValue);
-                portfolios.put(accountNum, newPortfolio);
+                addPortfolio(newPortfolio);
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -57,7 +60,7 @@ public class Database {
 //        return isSuccessful;
 //    }
 
-//    public boolean newPortfolio (Portfolio p) {
-//        return isSuccessful;
-//    }
+    public void addPortfolio (Portfolio p) {
+        portfolios.put(p.getAccountNum(), p);
+    }
 }

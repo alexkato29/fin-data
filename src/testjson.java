@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class testjson {
 
     public static void main(String[] args) {
-        Database db = new Database(".\\data\\testJSON.json");
+        Database db = new Database("./data/testJSON.json");
         Portfolio test = db.getPortfolio("123");
         System.out.println(test.getAccountHolder());
         System.out.println(test.getAccountNum());
