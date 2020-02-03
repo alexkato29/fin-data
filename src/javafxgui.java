@@ -1,4 +1,5 @@
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
@@ -7,10 +8,13 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Map;
 
 // Javafx.stage = Window
 // Scene = stuff inside the window
@@ -28,7 +32,8 @@ public class javafxgui extends Application {
 
 
         String database_file_path = fileChooser.showOpenDialog(primaryStage).getAbsolutePath();
-        Database portfolioDatabse = new Database(database_file_path);
+//        Database portfolioDatabase = new Database(database_file_path); // TODO: THIS COMMAND DOES NOT WORK YET
+        System.out.println("Database has been uploaded");
 
         Button optn1 = new Button("Scenario 1");
         Button optn2 = new Button("Scenario 2");
@@ -93,6 +98,36 @@ public class javafxgui extends Application {
 
 
 //      At the close write the new database into a new JSON File
+
+        primaryStage.setOnHiding(new EventHandler<WindowEvent>() {
+
+            @Override
+            public void handle(WindowEvent event) {
+                Platform.runLater(new Runnable() {
+
+                    @Override
+                    public void run() {
+                        System.out.println("Creating Database and exiting...");
+
+//                        Map<String, Portfolio> portfolios = portfolioDatabase.getPortfolios();
+
+
+
+//                        Iterator it = portfolios.entrySet().iterator();
+//                        while (it.hasNext()) {
+//                            Map.Entry pair = (Map.Entry)it.next();
+//                            System.out.println(pair.getKey() + " = " + pair.getValue());
+//                            it.remove(); // avoids a ConcurrentModificationException
+//                        }
+
+
+
+
+                        System.exit(0);
+                    }
+                });
+            }
+        });
 
     }
 

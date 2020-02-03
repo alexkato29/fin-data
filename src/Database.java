@@ -52,7 +52,12 @@ public class Database {
     public Portfolio getPortfolio (String accountNum) {
         return portfolios.get(accountNum);
     }
-//
+
+    public HashMap<String, Portfolio> getPortfolios() {
+        return portfolios;
+    }
+
+    //
 //    public boolean updatePortfolio (Portfolio p) {
 //        return isSuccessful;
 //    }
