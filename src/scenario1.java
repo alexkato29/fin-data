@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class scenario1 implements EventHandler<ActionEvent> {
 
     private Stage parentStage;
-    private final  String DATABASEFILEPATH = ".\\data\\testJSON.json";
+
     public scenario1(Stage parent){
         this.parentStage = parent;
     }
@@ -25,7 +25,7 @@ public class scenario1 implements EventHandler<ActionEvent> {
             File file = fileChooser.showOpenDialog(parentStage);
 
             tradeList = readData.csvParse(file.getAbsolutePath());
-            readData.jsonUpdate(DATABASEFILEPATH, tradeList);
+//            readData.jsonUpdate(DATABASEFILEPATH, tradeList);
 
 
         } catch (IOException e){
