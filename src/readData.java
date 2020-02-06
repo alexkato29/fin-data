@@ -57,9 +57,6 @@ public class readData {
             JSONObject data = (JSONObject) parser.parse(reader);
             JSONArray portfolios = (JSONArray) data.get("portfolios");
 
-
-
-
             for (int i = 0; i < portfolios.size(); i++){
                 JSONObject account = (JSONObject) portfolios.get(i);
                 for (int j = 0; j < tradeList.size(); j++){
@@ -77,9 +74,16 @@ public class readData {
                 }
             }
 
-            String fileName = new SimpleDateFormat("yyyyMMddHHmm'.json'").format(new Date());
+
+//            String fileName = new SimpleDateFormat("yyyyMMddHHmm'.json'").format(new Date());
+            String fileName = new SimpleDateFormat("yyyy-MM-dd_HH-mm'.json'").format(new Date());
             System.out.println(fileName);
             FileWriter file = new FileWriter(".\\data\\"+fileName, true);
+
+//
+//            FileWriter file = new FileWriter(".\\data\\" + fileName, false);
+
+
 
             try {
                 file.write(data.toJSONString());

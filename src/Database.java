@@ -25,6 +25,7 @@ public class Database {
         try (Reader reader = new FileReader(pathToFile)) {
             org.json.simple.parser.JSONParser parser = new JSONParser();
             JSONObject data = (JSONObject) parser.parse(reader);
+
             JSONArray storedPortfolios = (JSONArray) data.get("portfolios");
 
             for (int i = 0; i < storedPortfolios.size(); i++) {
@@ -33,15 +34,22 @@ public class Database {
                 String accountHolder = (String) p.get("accountHolder");
                 boolean isIndividual = (boolean) p.get("isIndividual");
                 double portfolioValue = (double) p.get("portfolioValue");
-                JSONObject securityData = (JSONObject) p.get("securities");
-                Map<String, Security> securities = new HashMap<String, Security>();
-                for (Integer j = 0; j < securityData.size(); j++) {
-                    JSONObject security = (JSONObject) securityData.get(j.toString());
-                    String tickerName = security.get("tickerName").toString();
-                    double quantity = (double) security.get("quantity");
-                    double price = (double) security.get("price");
-                    securities.put(tickerName, new Security(tickerName, quantity, price));
+
+                JSONArray securityArray = (JSONArray) p.get("securities");
+                Map<String,Security> securities = new HashMap<>();
+                for (int j = 0 ; j < securityArray.size(); j++){
+                    JSONObject company = (JSONObject)securityArray.get(j);
+                    String ticker = (String)company.get("ticker");
+                    double quantity = new Double(company.get("quantity").toString());
+                    double price = new Double(company.get("price").toString());
+
+                    Security s = new Security(ticker, quantity, price);
+                    securities.put(ticker, s);
                 }
+
+
+
+
                 Portfolio newPortfolio = new Portfolio(accountNum, accountHolder, isIndividual, securities, portfolioValue);
                 addPortfolio(newPortfolio);
             }
@@ -60,12 +68,25 @@ public class Database {
         return portfolios;
     }
 
-    //
-//    public boolean updatePortfolio (Portfolio p) {
-//        return isSuccessful;
-//    }
 
     public void addPortfolio (Portfolio p) {
         portfolios.put(p.getAccountNum(), p);
+    }
+
+
+    public void applyTrade (Trade t){
+        for(Portfolio p : portfolios.values()){
+            p.applyTrade(t);
+        }
+
+    }
+    public String toString(){
+        StringBuilder str = new StringBuilder("Database\n");
+        for (Portfolio p: portfolios.values()) {
+            str.append(p.toString());
+            str.append("\n");
+        }
+
+        return str.toString();
     }
 }

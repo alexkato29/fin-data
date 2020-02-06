@@ -32,8 +32,10 @@ public class javafxgui extends Application {
 
 
         String database_file_path = fileChooser.showOpenDialog(primaryStage).getAbsolutePath();
-//        Database portfolioDatabase = new Database(database_file_path); // TODO: THIS COMMAND DOES NOT WORK YET
+        Database portfolioDatabase = new Database(database_file_path); // TODO: THIS COMMAND DOES NOT WORK YET
         System.out.println("Database has been uploaded");
+
+        System.out.println(portfolioDatabase);
 
         Button optn1 = new Button("Scenario 1");
         Button optn2 = new Button("Scenario 2");
@@ -52,7 +54,14 @@ public class javafxgui extends Application {
                     File file = fileChooser.showOpenDialog(primaryStage);
 
                     tradeList = readData.csvParse(file.getAbsolutePath());
-                    readData.jsonUpdate(database_file_path, tradeList);
+
+                    for (Trade t: tradeList){
+                        portfolioDatabase.applyTrade(t);
+                    }
+
+                    System.out.println("Database Updated");
+                    System.out.println(portfolioDatabase);
+//                    readData.jsonUpdate(database_file_path, tradeList);
                     // Above Line should be portfolioDatabase.update(tradeList)
 
                 } catch (IOException e){
@@ -110,7 +119,7 @@ public class javafxgui extends Application {
                         System.out.println("Creating Database and exiting...");
 
 //                        Map<String, Portfolio> portfolios = portfolioDatabase.getPortfolios();
-
+//                        Map<String, Portfolio> port
 
 
 //                        Iterator it = portfolios.entrySet().iterator();
@@ -118,12 +127,12 @@ public class javafxgui extends Application {
 //                            Map.Entry pair = (Map.Entry)it.next();
 //                            System.out.println(pair.getKey() + " = " + pair.getValue());
 //                            it.remove(); // avoids a ConcurrentModificationException
-//                        }
-
-
-
-
-                        System.exit(0);
+////                        }
+//
+//
+//
+//
+//                        System.exit(0);
                     }
                 });
             }

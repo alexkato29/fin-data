@@ -35,7 +35,18 @@ public class Security {
         return ticker;
     }
 
+    public String toString(){
+        return "Ticker: " + ticker + "\nQuantity: " + quantity + "\nPrice: " + price + "\n";
+    }
+
     public boolean equals (Security s) {
         return s.getTicker().equals(ticker);
+    }
+
+    public void applyTrade(Trade t){
+        if (t.getTicker().equals(ticker)){
+            this.price = t.getPrice();
+            this.quantity = t.getQuantity();
+        }
     }
 }
