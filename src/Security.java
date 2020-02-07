@@ -45,8 +45,10 @@ public class Security {
 
     public void applyTrade(Trade t){
         if (t.getTicker().equals(ticker)){
-            this.price = t.getPrice();
-            this.quantity = t.getQuantity();
+
+            setPrice(t.getPrice());
+            changeQuantity(t.getQuantity());
+
         }
     }
 }

@@ -1,3 +1,4 @@
+import javafx.scene.control.Alert;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -53,10 +54,14 @@ public class Database {
                 Portfolio newPortfolio = new Portfolio(accountNum, accountHolder, isIndividual, securities, portfolioValue);
                 addPortfolio(newPortfolio);
             }
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ParseException e1) {
-            e1.printStackTrace();
+        } catch (Exception e) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText("Database file Format is incorrect\n Restart the Program and Select the correct file");
+
+            alert.showAndWait();
+            System.exit(0);
         }
     }
 
