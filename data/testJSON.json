@@ -7,13 +7,11 @@
             "isIndividual": true,
             "portfolioValue": 3.98,
             "securities": {
-                "0": {
-                    "tickerName": "FCASH",
+                "FCASH": {
                     "quantity": 1.00,
                     "price": 1.00
                 },
-                "1": {
-                    "tickerName": "FDRXX",
+                "FDRXX": {
                     "quantity": 1.00,
                     "price": 1.99
                 }
@@ -26,13 +24,11 @@
             "isIndividual": true,
             "portfolioValue": 3.98,
             "securities": {
-                "0": {
-                    "tickerName": "FCASH",
+                "FCASH": {
                     "quantity": 1.00,
                     "price": 1.00
                 },
-                "1": {
-                    "tickerName": "FDRXX",
+                "FDRXX": {
                     "quantity": 1.00,
                     "price": 1.99
                 }

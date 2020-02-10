@@ -75,8 +75,8 @@ public class readData {
             }
 
             String fileName = new SimpleDateFormat("yyyy-MM-dd_HH-mm'.json'").format(new Date());
-            FileWriter file = new FileWriter(".\\data\\" + fileName, false);
-
+            FileWriter file = new FileWriter(".\\desktop\\" + fileName, true);
+            System.out.println(fileName);
 
             try {
                 file.write(data.toJSONString());
