@@ -125,7 +125,7 @@ public class javafxgui extends Application {
 
                 String fileName = new SimpleDateFormat("yyyy-MM-dd_HH-mm'.json'").format(new Date());
                 data.put("portfolios", array);
-                try (FileWriter file =  new FileWriter(".\\data\\"+fileName, true);) {
+                try (FileWriter file =  new FileWriter(defaultDirectory.getAbsoluteFile()+fileName, true);) {
                     file.write(data.toJSONString());
                     file.flush();
                     showAlert("Database Update", fileName + " file has been database created.\n");
@@ -135,17 +135,17 @@ public class javafxgui extends Application {
 
             }
         });
-        changeDB.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                FileChooser fileChooser = new FileChooser();
-                fileChooser.setInitialDirectory(defaultDirectory);
-                File file = fileChooser.showOpenDialog(primaryStage);
-                String dbFilePath = file.getAbsolutePath();
-                portfolioDatabase = new Database(dbFilePath);
-
-            }
-        });
+//        changeDB.setOnAction(new EventHandler<ActionEvent>() {
+//            @Override
+//            public void handle(ActionEvent event) {
+//                FileChooser fileChooser = new FileChooser();
+//                fileChooser.setInitialDirectory(defaultDirectory);
+//                File file = fileChooser.showOpenDialog(primaryStage);
+//                String dbFilePath = file.getAbsolutePath();
+//                portfolioDatabase = new Database(dbFilePath);
+//
+//            }
+//        });
 
 
         GridPane grid = new GridPane();
