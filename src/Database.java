@@ -61,7 +61,6 @@ public class Database {
             alert.setContentText("Database file Format is incorrect\n Restart the Program and Select the correct file");
 
             alert.showAndWait();
-            System.exit(0);
         }
     }
 
