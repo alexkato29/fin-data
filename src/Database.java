@@ -2,7 +2,6 @@ import javafx.scene.control.Alert;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
 
 import javax.sound.sampled.Port;
 import java.io.FileReader;
@@ -35,22 +34,15 @@ public class Database {
                 String accountHolder = (String) p.get("accountHolder");
                 boolean isIndividual = (boolean) p.get("isIndividual");
                 double portfolioValue = (double) p.get("portfolioValue");
-
-                JSONArray securityArray = (JSONArray) p.get("securities");
-                Map<String,Security> securities = new HashMap<>();
-                for (int j = 0 ; j < securityArray.size(); j++){
-                    JSONObject company = (JSONObject)securityArray.get(j);
-                    String ticker = (String)company.get("ticker");
-                    double quantity = new Double(company.get("quantity").toString());
-                    double price = new Double(company.get("price").toString());
-
-                    Security s = new Security(ticker, quantity, price);
-                    securities.put(ticker, s);
+                JSONObject securityData = (JSONObject) p.get("securities");
+                Map<String, Security> securities = new HashMap<String, Security>();
+                for (Integer j = 0; j < securityData.size(); j++) {
+                    JSONObject security = (JSONObject) securityData.get(j);
+                    String tickerName = security.get("tickerName").toString();
+                    double quantity = (double) security.get("quantity");
+                    double price = (double) security.get("price");
+                    securities.put(tickerName, new Security(tickerName, quantity, price));
                 }
-
-
-
-
                 Portfolio newPortfolio = new Portfolio(accountNum, accountHolder, isIndividual, securities, portfolioValue);
                 addPortfolio(newPortfolio);
             }
