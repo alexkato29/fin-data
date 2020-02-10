@@ -1,0 +1,42 @@
+{
+    "portfolios": [
+
+        {
+            "accountNum": "123",
+            "accountHolder": "Hannah Ahn",
+            "isIndividual": true,
+            "portfolioValue": 3.98,
+            "securities": [
+                {
+                    "tickerName": "FCASH",
+                    "quantity": 1.00,
+                    "price": 1.00
+                },
+                {
+                    "tickerName": "FDRXX",
+                    "quantity": 1.00,
+                    "price": 1.99
+                }
+            ]
+        },
+
+        {
+            "accountNum": "456",
+            "accountHolder": "DChoi",
+            "isIndividual": true,
+            "portfolioValue": 3.98,
+            "securities": {
+                "0": {
+                    "tickerName": "FCASH",
+                    "quantity": 1.00,
+                    "price": 1.00
+                },
+                "1": {
+                    "tickerName": "FDRXX",
+                    "quantity": 1.00,
+                    "price": 1.99
+                }
+            }
+        }
+    ]
+}
