@@ -123,9 +123,11 @@ public class javafxgui extends Application {
                 }
 
 
+
+
                 String fileName = new SimpleDateFormat("yyyy-MM-dd_HH-mm'.json'").format(new Date());
                 data.put("portfolios", array);
-                try (FileWriter file =  new FileWriter(defaultDirectory.getAbsoluteFile()+fileName, true);) {
+                try (FileWriter file =  new FileWriter(defaultDirectory.getAbsoluteFile()+"\\"+fileName, true);) {
                     file.write(data.toJSONString());
                     file.flush();
                     showAlert("Database Update", fileName + " file has been database created.\n");
