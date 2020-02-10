@@ -46,15 +46,7 @@ public class Portfolio {
         return securities;
     }
 
-    public void addSecurity(Security newSec) {
-        Security tempSec = securities.get(newSec.getTicker());
-        if (tempSec != null) {
-            tempSec.changeQuantity(newSec.getQuantity());
-            tempSec.setPrice(newSec.getPrice());
-            return;
-        }
-        securities.put(tempSec.getTicker(), tempSec);
-    }
+
 
     // Valuing the Portfolio
     public double getPortfolioValue() {
@@ -70,8 +62,44 @@ public class Portfolio {
         portfolioValue = newVal;
     }
 
-    public void applyTrade (Trade t) {
-        addSecurity(t.getSecurity());
-        calcPortfolioValue();
+//    public void applyTrade (Trade t) {
+//        addSecurity(t.getSecurity());
+//        calcPortfolioValue();
+//    }
+
+//    public void addSecurity(Security newSec) {
+//        Security tempSec = securities.get(newSec.getTicker());
+//        if (tempSec != null) {
+//            tempSec.changeQuantity(newSec.getQuantity());
+//            tempSec.setPrice(newSec.getPrice());
+//            return;
+//        }
+//        securities.put(tempSec.getTicker(), tempSec);
+//    }
+
+    public void applyTrade (Trade t){
+
+        String newTicker = t.getTicker();
+        if (securities.get(newTicker)==null){
+            Security newSecurity = new Security(t.getTicker(), t.getQuantity(), t.getPrice());
+            securities.put(newSecurity.getTicker(), newSecurity);
+        } else{
+            for(Security s : securities.values()){
+                s.applyTrade(t);
+            }
+        }
+
+//        TODO: USE SEcurities<String,Security> to find the right security
+//        TODO: Make an new existing Security if security does not contain
+    }
+    public String toString(){
+        StringBuilder str = new StringBuilder("------Portfolio-----\n");
+        for (Security s: securities.values()) {
+            str.append(s.toString());
+            str.append("\n");
+        }
+        str.append("------End-----");
+
+        return str.toString();
     }
 }

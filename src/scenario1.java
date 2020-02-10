@@ -25,7 +25,7 @@ public class scenario1 implements EventHandler<ActionEvent> {
             File file = fileChooser.showOpenDialog(parentStage);
 
             tradeList = readData.csvParse(file.getAbsolutePath());
-//            readData.jsonUpdate(DATABASEFILEPATH, tradeList);
+            readData.jsonUpdate("D:\\Desktop\\Github\\fin-data\\data\\testJSON.json", tradeList);
 
 
         } catch (IOException e){

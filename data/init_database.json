@@ -3,16 +3,16 @@
 
         {
             "accountNum": "123",
-            "accountHolder": "Hannah Ahn",
             "isIndividual": true,
             "portfolioValue": 3.98,
             "securities": {
+
                 "FCASH": {
-                    "quantity": 1.00,
-                    "price": 1.00
+                    "quantity": 1,
+                    "price": 1
                 },
-                "FDRXX": {
-                    "quantity": 1.00,
+                "FDRXX":{        
+                    "quantity": 1,
                     "price": 1.99
                 }
             }
@@ -20,17 +20,16 @@
 
         {
             "accountNum": "456",
-            "accountHolder": "DChoi",
             "isIndividual": true,
             "portfolioValue": 3.98,
             "securities": {
-                "FCASH": {
-                    "quantity": 1.00,
-                    "price": 1.00
+                "TSLA": {
+                    "quantity": 30,
+                    "price": 67
                 },
-                "FDRXX": {
-                    "quantity": 1.00,
-                    "price": 1.99
+                "AAPL": {
+                    "quantity": 3,
+                    "price": 678
                 }
             }
         }

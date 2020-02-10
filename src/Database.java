@@ -1,3 +1,4 @@
+import javafx.scene.control.Alert;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -25,6 +26,7 @@ public class Database {
         try (Reader reader = new FileReader(pathToFile)) {
             org.json.simple.parser.JSONParser parser = new JSONParser();
             JSONObject data = (JSONObject) parser.parse(reader);
+
             JSONArray storedPortfolios = (JSONArray) data.get("portfolios");
 
             for (int i = 0; i < storedPortfolios.size(); i++) {
@@ -33,34 +35,63 @@ public class Database {
                 String accountHolder = (String) p.get("accountHolder");
                 boolean isIndividual = (boolean) p.get("isIndividual");
                 double portfolioValue = (double) p.get("portfolioValue");
-                JSONObject securityData = (JSONObject) p.get("securities");
-                Map<String, Security> securities = new HashMap<String, Security>();
-                for (Integer j = 0; j < securityData.size(); j++) {
-                    JSONObject security = (JSONObject) securityData.get(j.toString());
-                    String tickerName = security.get("tickerName").toString();
-                    double quantity = (double) security.get("quantity");
-                    double price = (double) security.get("price");
-                    securities.put(tickerName, new Security(tickerName, quantity, price));
+
+                JSONArray securityArray = (JSONArray) p.get("securities");
+                Map<String,Security> securities = new HashMap<>();
+                for (int j = 0 ; j < securityArray.size(); j++){
+                    JSONObject company = (JSONObject)securityArray.get(j);
+                    String ticker = (String)company.get("ticker");
+                    double quantity = new Double(company.get("quantity").toString());
+                    double price = new Double(company.get("price").toString());
+
+                    Security s = new Security(ticker, quantity, price);
+                    securities.put(ticker, s);
                 }
+
+
+
+
                 Portfolio newPortfolio = new Portfolio(accountNum, accountHolder, isIndividual, securities, portfolioValue);
                 addPortfolio(newPortfolio);
             }
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ParseException e1) {
-            e1.printStackTrace();
+        } catch (Exception e) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText("Database file Format is incorrect\n Restart the Program and Select the correct file");
+
+            alert.showAndWait();
+            System.exit(0);
         }
     }
 
     public Portfolio getPortfolio (String accountNum) {
         return portfolios.get(accountNum);
     }
-//
-//    public boolean updatePortfolio (Portfolio p) {
-//        return isSuccessful;
-//    }
+
+    public HashMap<String, Portfolio> getPortfolios() {
+        return portfolios;
+    }
+
 
     public void addPortfolio (Portfolio p) {
         portfolios.put(p.getAccountNum(), p);
+    }
+
+
+    public void applyTrade (Trade t){
+        for(Portfolio p : portfolios.values()){
+            p.applyTrade(t);
+        }
+
+    }
+    public String toString(){
+        StringBuilder str = new StringBuilder("Database\n");
+        for (Portfolio p: portfolios.values()) {
+            str.append(p.toString());
+            str.append("\n");
+        }
+
+        return str.toString();
     }
 }
