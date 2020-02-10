@@ -78,9 +78,19 @@ public class Portfolio {
 //    }
 
     public void applyTrade (Trade t){
-        for(Security s : securities.values()){
-            s.applyTrade(t);
+
+        String newTicker = t.getTicker();
+        if (securities.get(newTicker)==null){
+            Security newSecurity = new Security(t.getTicker(), t.getQuantity(), t.getPrice());
+            securities.put(newSecurity.getTicker(), newSecurity);
+        } else{
+            for(Security s : securities.values()){
+                s.applyTrade(t);
+            }
         }
+
+//        TODO: USE SEcurities<String,Security> to find the right security
+//        TODO: Make an new existing Security if security does not contain
     }
     public String toString(){
         StringBuilder str = new StringBuilder("------Portfolio-----\n");

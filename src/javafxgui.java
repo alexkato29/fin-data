@@ -23,8 +23,6 @@ import java.util.Date;
 
 import java.util.Map;
 
-// Javafx.stage = Window
-// Scene = stuff inside the window
 
 public class javafxgui extends Application {
 
