@@ -79,6 +79,9 @@ public class Portfolio {
 
     public void applyTrade (Trade t){
 
+        if (!(t.getAccountNum().equalsIgnoreCase(accountNum))){
+            return;
+        }
         String newTicker = t.getTicker();
         if (securities.get(newTicker)==null){
             Security newSecurity = new Security(t.getTicker(), t.getQuantity(), t.getPrice());
