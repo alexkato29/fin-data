@@ -40,6 +40,7 @@ public class readData {
                     double quantity = Double.parseDouble(csvRecord.get(8).replaceAll(",",""));
                     double price = Double.parseDouble(csvRecord.get(10).replaceAll("\\$","").replaceAll(",", ""));
 
+
                     csvTrades.add(new Trade(accountNum, registration, ticker, quantity, price));
                 }
             }
@@ -68,8 +69,8 @@ public class readData {
                         double newQuantity = (long)company.get("quantity") + trade.getQuantity();
                         double newPrice = trade.getPrice();
 
-                        company.put("quantity", 9999);
-                        company.put("price", 9999);
+                        company.put("quantity", newQuantity);
+                        company.put("price", newPrice);
                     }
                 }
             }

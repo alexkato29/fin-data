@@ -89,11 +89,14 @@ public class Portfolio {
         } else{
             for(Security s : securities.values()){
                 s.applyTrade(t);
+                if (s.getQuantity() <= 0){
+                    securities.remove(s.getTicker());
+//                   TODO: Remove security when quantity is all closed
+                }
             }
         }
 
-//        TODO: USE SEcurities<String,Security> to find the right security
-//        TODO: Make an new existing Security if security does not contain
+
     }
     public String toString(){
         StringBuilder str = new StringBuilder("------Portfolio-----\n");

@@ -60,13 +60,6 @@ public class javafxgui extends Application {
         Button changeDB = new Button("Change Database");
 
 
-        optn1.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event)  {
-
-
-            }
-        });
 
         dbBTN.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -79,9 +72,14 @@ public class javafxgui extends Application {
                     fileChooser.setInitialDirectory(defaultDirectory);
                     File file = fileChooser.showOpenDialog(primaryStage);
 
+
+
                     tradeList = readData.csvParse(file.getAbsolutePath());
 
+
+
                     for (Trade t: tradeList){
+
                         portfolioDatabase.applyTrade(t);
                     }
 

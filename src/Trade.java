@@ -8,7 +8,7 @@ public class Trade {
     public Trade(String accountNum, String registration, String ticker, double quantityPurchased, double price) {
         this.accountNum = accountNum;
         this.registration = registration;
-        setSecurity(ticker, price, quantityPurchased);
+        setSecurity(ticker, quantityPurchased, price);
     }
 
     public String getAccountNum() {
@@ -31,8 +31,8 @@ public class Trade {
         return security;
     }
 
-    public void setSecurity (String ticker, double price, double quantityPurchased) {
-        security = new Security (ticker, price, quantityPurchased);
+    public void setSecurity (String ticker,  double quantityPurchased, double price) {
+        security = new Security (ticker, quantityPurchased, price);
     }
 
     public String getTicker () {
