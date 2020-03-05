@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Map;
 
@@ -87,16 +88,26 @@ public class Portfolio {
             Security newSecurity = new Security(t.getTicker(), t.getQuantity(), t.getPrice());
             securities.put(newSecurity.getTicker(), newSecurity);
         } else{
+
+            ArrayList<String> removeSecurities = new ArrayList<>();
             for(Security s : securities.values()){
+
                 s.applyTrade(t);
+
                 if (s.getQuantity() <= 0){
-                    securities.remove(s.getTicker());
-//                   TODO: Remove security when quantity is all closed
+//                    System.out.println(s.getTicker() + " should be removed");
+//                    System.out.println(securities.keySet().toArray()[0].equals(s.getTicker()));
+
+                    removeSecurities.add(s.getTicker());
+//                    securities.remove(ticker); // TODO: this line doesn't work
+
                 }
             }
+
+            for(String e : removeSecurities){
+                securities.remove(e);
+            }
         }
-
-
     }
     public String toString(){
         StringBuilder str = new StringBuilder("------Portfolio-----\n");

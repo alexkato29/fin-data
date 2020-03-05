@@ -50,7 +50,7 @@ public class javafxgui extends Application {
         showAlert("Database Update", "Database has been Uploaded");
 
 
-        System.out.println(portfolioDatabase);
+//        System.out.println(portfolioDatabase);
 
         Button optn1 = new Button("Scenario 1");
         Button optn2 = new Button("Scenario 2");
@@ -84,7 +84,7 @@ public class javafxgui extends Application {
                     }
 
                     System.out.println("Database Updated");
-                    System.out.println(portfolioDatabase);
+//                    System.out.println(portfolioDatabase);
 
 
                 } catch (IOException e){
