@@ -2,12 +2,15 @@ public class Trade {
 
 
     private String accountNum;
+    private String accountHolder;
     private String registration;
     private Security security;
 
-    public Trade(String accountNum, String registration, String ticker, double quantityPurchased, double price) {
+
+    public Trade(String accountNum, String accountHolder, String registration, String ticker, double quantityPurchased, double price) {
         this.accountNum = accountNum;
         this.registration = registration;
+        this.accountHolder = accountHolder;
         setSecurity(ticker, quantityPurchased, price);
     }
 
@@ -49,7 +52,7 @@ public class Trade {
 
     @Override
     public String toString(){
-        return "Account #: " + accountNum + "\nRegistration: " + registration + "\nTicker: " + security.getTicker() + "\nQuantity Purchased: " + security.getQuantity() +"\nPrice: " + security.getPrice() + "\n";
+        return "Account #: " + accountNum +"\nAccount Holder: " + accountHolder +"\nRegistration: " + registration + "\nTicker: " + security.getTicker() + "\nQuantity Purchased: " + security.getQuantity() +"\nPrice: " + security.getPrice() + "\n";
 
 
     }

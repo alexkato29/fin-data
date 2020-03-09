@@ -99,8 +99,10 @@ public class javafxgui extends Application {
                 for (Portfolio p : portfolios.values()){
                     JSONObject jsonPortfolio = new JSONObject();
                     jsonPortfolio.put("accountNum", p.getAccountNum());
+                    jsonPortfolio.put("accountHolder", p.getAccountHolder());
                     jsonPortfolio.put("isIndividual", p.isIndividual());
                     jsonPortfolio.put("portfolioValue", p.getPortfolioValue());
+
 
                     JSONArray securities = new JSONArray();
                     for(Security s : p.getSecurities().values()){
@@ -135,6 +137,7 @@ public class javafxgui extends Application {
 
             }
         });
+        optn1.setOnAction(new scenario1(primaryStage, defaultDirectory));
 //        changeDB.setOnAction(new EventHandler<ActionEvent>() {
 //            @Override
 //            public void handle(ActionEvent event) {

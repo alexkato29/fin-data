@@ -3,6 +3,7 @@
 
         {
             "accountNum": "123",
+            "accountHolder": "Alex Katopodis",
             "isIndividual": true,
             "portfolioValue": 3.98,
             "securities": [
@@ -20,6 +21,7 @@
 
         {
             "accountNum": "456",
+            "accountHolder": "Bob",
             "isIndividual": true,
             "portfolioValue": 3.98,
             "securities": [

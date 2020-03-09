@@ -35,13 +35,14 @@ public class readData {
                     continue;
                 } else{
                     String accountNum = csvRecord.get(0);
+                    String accountHolder = csvRecord.get(2);
                     String registration = csvRecord.get(5);
                     String ticker = csvRecord.get(6);
                     double quantity = Double.parseDouble(csvRecord.get(8).replaceAll(",",""));
                     double price = Double.parseDouble(csvRecord.get(10).replaceAll("\\$","").replaceAll(",", ""));
 
 
-                    csvTrades.add(new Trade(accountNum, registration, ticker, quantity, price));
+                    csvTrades.add(new Trade(accountNum, accountHolder,registration, ticker, quantity, price));
                 }
             }
         } catch (IOException e){
