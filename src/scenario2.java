@@ -1,13 +1,66 @@
 import javafx.event.Event;
 import javafx.event.EventHandler;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
+import javax.sound.sampled.Port;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashSet;
 
-public class scenario2 implements EventHandler {
+public class scenario2 implements EventHandler<javafx.event.ActionEvent> {
 
-    @Override
-    public void handle(Event event) {
+    private Stage parentStage;
+    private File defaultDirectory;
 
+    public scenario2(Stage parent, File defaultDirectory){
+        this.defaultDirectory = defaultDirectory;
+        this.parentStage = parent;
     }
+
+    public void handle(javafx.event.ActionEvent event)  {
+
+        ArrayList<Portfolio> portfolios;
+
+        try {
+            FileChooser fileChooser = new FileChooser();
+            File file = fileChooser.showOpenDialog(parentStage);
+            fileChooser.setInitialDirectory(defaultDirectory);
+
+            // TODO: Why doesn't this work...
+            portfolios = readData.csvParse(file.getAbsolutePath());
+
+
+            for (Portfolio p : portfolios){
+                FileWriter csvWriter = new FileWriter(p.getAccountNum() + ".csv");
+                csvWriter.append("Ticker");
+                csvWriter.append(",");
+                csvWriter.append("Quantity");
+                csvWriter.append("\n");
+
+                // TODO: Iterate through securities
+                csvWriter.append(t.getTicker());
+                csvWriter.append(",");
+                csvWriter.append(Double.toString(t.getQuantity()));
+                csvWriter.append("\n");
+
+                csvWriter.flush();
+                csvWriter.close();
+
+
+            }
+
+
+
+
+        } catch (IOException e){
+            System.out.println("File Not Chosen");
+        }
+    }
+
 }
