@@ -51,6 +51,61 @@ public class readData {
         return csvTrades;
     }
 
+    public static void getPortfolios(String jsonDBFilePath){
+        try (Reader reader = new FileReader(jsonDBFilePath)) {
+
+            JSONParser parser = new JSONParser();
+            JSONObject data = (JSONObject) parser.parse(reader);
+            JSONArray portfolios = (JSONArray) data.get("portfolios");
+
+            for (int i = 0; i < portfolios.size(); i++){
+                JSONObject account = (JSONObject) portfolios.get(i);
+                for (int j = 0; j < tradeList.size(); j++){
+                    Trade trade = tradeList.get(j);
+                    if (account.get("accountNum").equals(trade.getAccountNum())) {
+                        JSONObject securities = (JSONObject) account.get("securities");
+
+                        JSONObject company = (JSONObject) securities.get(trade.getTicker());
+                        double newQuantity = (long)company.get("quantity") + trade.getQuantity();
+                        double newPrice = trade.getPrice();
+
+                        company.put("quantity", newQuantity);
+                        company.put("price", newPrice);
+                    }
+                }
+            }
+
+
+//            String fileName = new SimpleDateFormat("yyyyMMddHHmm'.json'").format(new Date());
+            String fileName = new SimpleDateFormat("yyyy-MM-dd_HH-mm'.json'").format(new Date());
+
+            FileWriter file = new FileWriter(".\\data\\"+fileName, true);
+
+//
+//            FileWriter file = new FileWriter(".\\data\\" + fileName, false);
+
+
+
+            try {
+                file.write(data.toJSONString());
+                System.out.println("Portfolio Updated");
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                file.flush();
+                file.close();
+            }
+
+
+        }
+
+        catch (IOException e) {
+            e.printStackTrace();
+        } catch (ParseException e1) {
+            e1.printStackTrace();
+        }
+    }
     public static void jsonUpdate(String jsonDBFilePath, ArrayList<Trade> tradeList){
 
         try (Reader reader = new FileReader(jsonDBFilePath)) {
