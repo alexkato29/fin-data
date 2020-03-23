@@ -149,6 +149,7 @@ public class javafxgui extends Application {
 //
 //            }
 //        });
+        optn2.setOnAction(new scenario2(primaryStage,defaultDirectory, portfolioDatabase));
 
 
         GridPane grid = new GridPane();
