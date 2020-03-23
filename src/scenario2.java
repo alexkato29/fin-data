@@ -12,6 +12,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Map;
 
 public class scenario2 implements EventHandler<javafx.event.ActionEvent> {
 
@@ -42,12 +43,16 @@ public class scenario2 implements EventHandler<javafx.event.ActionEvent> {
                 csvWriter.append(",");
                 csvWriter.append("Quantity");
                 csvWriter.append("\n");
+                
+                Map<String, Security> securities = p.getSecurities();
 
-                // TODO: Iterate through securities
-                csvWriter.append(t.getTicker());
-                csvWriter.append(",");
-                csvWriter.append(Double.toString(t.getQuantity()));
-                csvWriter.append("\n");
+                for (Map.Entry<String, Security> set : securities.entrySet()) {
+                    Security s = set.getValue();
+                    csvWriter.append(s.getTicker());
+                    csvWriter.append(",");
+                    csvWriter.append(Double.toString(s.getQuantity()));
+                    csvWriter.append("\n");
+                }
 
                 csvWriter.flush();
                 csvWriter.close();
