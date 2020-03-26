@@ -43,7 +43,7 @@ public class scenario2 implements EventHandler<javafx.event.ActionEvent> {
                 csvWriter.append(",");
                 csvWriter.append("Quantity");
                 csvWriter.append("\n");
-                
+
                 Map<String, Security> securities = p.getSecurities();
 
                 for (Map.Entry<String, Security> set : securities.entrySet()) {
