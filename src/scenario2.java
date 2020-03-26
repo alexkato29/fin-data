@@ -33,12 +33,6 @@ public class scenario2 implements EventHandler<javafx.event.ActionEvent> {
 
         try {
 
-
-            // TODO: Why doesn't this work...
-
-
-
-
             for (Portfolio p : portfolios.values()){
                 FileWriter csvWriter = new FileWriter(p.getAccountNum() + ".csv");
                 csvWriter.append("Ticker");
