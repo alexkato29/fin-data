@@ -11,6 +11,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 
@@ -18,15 +19,17 @@ public class scenario2 implements EventHandler<javafx.event.ActionEvent> {
 
     private Stage parentStage;
     private File defaultDirectory;
+    private HashMap<String,Portfolio> portfolios;
 
-    public scenario2(Stage parent, File defaultDirectory){
+    public scenario2(Stage parent, File defaultDirectory, HashMap<String,Portfolio> portfolios){
         this.defaultDirectory = defaultDirectory;
         this.parentStage = parent;
+        this.portfolios = portfolios;
     }
 
     public void handle(javafx.event.ActionEvent event)  {
 
-        ArrayList<Portfolio> portfolios;
+
 
         try {
             FileChooser fileChooser = new FileChooser();
@@ -34,16 +37,17 @@ public class scenario2 implements EventHandler<javafx.event.ActionEvent> {
             fileChooser.setInitialDirectory(defaultDirectory);
 
             // TODO: Why doesn't this work...
-            portfolios = readData.csvParse(file.getAbsolutePath());
 
 
-            for (Portfolio p : portfolios){
+
+
+            for (Portfolio p : portfolios.values()){
                 FileWriter csvWriter = new FileWriter(p.getAccountNum() + ".csv");
                 csvWriter.append("Ticker");
                 csvWriter.append(",");
                 csvWriter.append("Quantity");
                 csvWriter.append("\n");
-
+                
                 Map<String, Security> securities = p.getSecurities();
 
                 for (Map.Entry<String, Security> set : securities.entrySet()) {
