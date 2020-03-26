@@ -32,9 +32,7 @@ public class scenario2 implements EventHandler<javafx.event.ActionEvent> {
 
 
         try {
-            FileChooser fileChooser = new FileChooser();
-            File file = fileChooser.showOpenDialog(parentStage);
-            fileChooser.setInitialDirectory(defaultDirectory);
+
 
             // TODO: Why doesn't this work...
 
