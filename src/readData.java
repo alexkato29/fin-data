@@ -51,6 +51,7 @@ public class readData {
         return csvTrades;
     }
 
+
     public static void jsonUpdate(String jsonDBFilePath, ArrayList<Trade> tradeList){
 
         try (Reader reader = new FileReader(jsonDBFilePath)) {
