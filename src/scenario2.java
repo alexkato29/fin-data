@@ -19,12 +19,12 @@ public class scenario2 implements EventHandler<javafx.event.ActionEvent> {
 
     private Stage parentStage;
     private File defaultDirectory;
-    private Database database;
+    private HashMap<String,Portfolio> portfolios;
 
-    public scenario2(Stage parent, File defaultDirectory, Database db){
+    public scenario2(Stage parent, File defaultDirectory, HashMap<String,Portfolio> portfolios){
         this.defaultDirectory = defaultDirectory;
         this.parentStage = parent;
-        this.database = db;
+        this.portfolios = portfolios;
     }
 
     public void handle(javafx.event.ActionEvent event)  {
@@ -37,7 +37,7 @@ public class scenario2 implements EventHandler<javafx.event.ActionEvent> {
             fileChooser.setInitialDirectory(defaultDirectory);
 
             // TODO: Why doesn't this work...
-            HashMap<String, Portfolio> portfolios = database.getPortfolios();
+
 
 
 
