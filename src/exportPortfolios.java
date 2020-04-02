@@ -15,13 +15,13 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 
-public class scenario2 implements EventHandler<javafx.event.ActionEvent> {
+public class exportPortfolios implements EventHandler<javafx.event.ActionEvent> {
 
     private Stage parentStage;
     private File defaultDirectory;
     private HashMap<String,Portfolio> portfolios;
 
-    public scenario2(Stage parent, File defaultDirectory, HashMap<String,Portfolio> portfolios){
+    public exportPortfolios(Stage parent, File defaultDirectory, HashMap<String,Portfolio> portfolios){
         this.defaultDirectory = defaultDirectory;
         this.parentStage = parent;
         this.portfolios = portfolios;

@@ -1,5 +1,4 @@
 import javafx.application.Application;
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
@@ -135,7 +134,7 @@ public class javafxgui extends Application {
 
             }
         });
-        optn1.setOnAction(new scenario1(primaryStage, defaultDirectory));
+        optn1.setOnAction(new exportTrades(primaryStage, defaultDirectory));
 //        changeDB.setOnAction(new EventHandler<ActionEvent>() {
 //            @Override
 //            public void handle(ActionEvent event) {
@@ -147,7 +146,7 @@ public class javafxgui extends Application {
 //
 //            }
 //        });
-        optn2.setOnAction(new scenario2(primaryStage,defaultDirectory, portfolioDatabase.getPortfolios()));
+        optn2.setOnAction(new exportPortfolios(primaryStage,defaultDirectory, portfolioDatabase.getPortfolios()));
 
 
         GridPane grid = new GridPane();

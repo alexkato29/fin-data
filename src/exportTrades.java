@@ -11,12 +11,12 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
-public class scenario1 implements EventHandler<ActionEvent> {
+public class exportTrades implements EventHandler<ActionEvent> {
 
     private Stage parentStage;
     private File defaultDirectory;
 
-    public scenario1(Stage parent, File defaultDirectory){
+    public exportTrades(Stage parent, File defaultDirectory){
         this.defaultDirectory = defaultDirectory;
         this.parentStage = parent;
     }

@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91570491-00e6-425e-a1f3-7a15f28f9694" name="Default Changelist" comment="Default Changelist">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/scenario3.java" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/scenario1.java" afterPath="$PROJECT_DIR$/src/exportTrades.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/scenario2.java" afterPath="$PROJECT_DIR$/src/exportPortfolios.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/javafxgui.java" afterPath="$PROJECT_DIR$/src/javafxgui.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scenario2.java" afterPath="$PROJECT_DIR$/src/scenario2.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,10 +22,10 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="scenario2.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/scenario2.java">
+      <file leaf-file-name="exportPortfolios.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/exportPortfolios.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-64">
+            <state relative-caret-position="165">
               <caret line="26" column="37" lean-forward="false" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
               <folding />
             </state>
@@ -33,15 +35,15 @@
       <file leaf-file-name="javafxgui.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/javafxgui.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-165">
-              <caret line="61" column="59" lean-forward="true" selection-start-line="61" selection-start-column="59" selection-end-line="61" selection-end-column="59" />
+            <state relative-caret-position="-825">
+              <caret line="60" column="59" lean-forward="false" selection-start-line="60" selection-start-column="59" selection-end-line="60" selection-end-column="59" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="scenario1.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/scenario1.java">
+      <file leaf-file-name="exportTrades.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/exportTrades.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="165">
               <caret line="36" column="27" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
@@ -142,6 +144,7 @@
         <option value="$PROJECT_DIR$/src/scenario1.java" />
         <option value="$PROJECT_DIR$/src/scenario2.java" />
         <option value="$PROJECT_DIR$/src/javafxgui.java" />
+        <option value="$PROJECT_DIR$/src/exportPortfolios.java" />
       </list>
     </option>
   </component>
@@ -718,7 +721,7 @@
       <workItem from="1584985209118" duration="19000" />
       <workItem from="1585233667147" duration="929000" />
       <workItem from="1585354672828" duration="18000" />
-      <workItem from="1585838091236" duration="422000" />
+      <workItem from="1585838091236" duration="495000" />
     </task>
     <task id="LOCAL-00001" summary="test3 file added">
       <created>1574359186841</created>
@@ -951,11 +954,18 @@
       <option name="project" value="LOCAL" />
       <updated>1585234460985</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Default Changelist">
+      <created>1585838565227</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1585838565227</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4122000" />
+    <option name="totallyTimeSpent" value="4195000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
@@ -1045,7 +1055,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/scenario2.java">
+    <entry file="file://$PROJECT_DIR$/src/exportPortfolios.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
           <caret line="40" column="43" lean-forward="false" selection-start-line="40" selection-start-column="43" selection-end-line="40" selection-end-column="43" />
@@ -1061,7 +1071,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/scenario1.java">
+    <entry file="file://$PROJECT_DIR$/src/exportTrades.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="36" column="27" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
@@ -1100,7 +1110,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/scenario2.java">
+    <entry file="file://$PROJECT_DIR$/src/exportPortfolios.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1116,7 +1126,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/scenario1.java">
+    <entry file="file://$PROJECT_DIR$/src/exportTrades.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="36" column="27" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
@@ -1163,7 +1173,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/scenario1.java">
+    <entry file="file://$PROJECT_DIR$/src/exportTrades.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1219,7 +1229,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/scenario1.java">
+    <entry file="file://$PROJECT_DIR$/src/exportTrades.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1302,14 +1312,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/scenario3.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/testjson.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -1358,7 +1360,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/scenario1.java">
+    <entry file="file://$PROJECT_DIR$/src/scenario3.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/javafxgui.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-825">
+          <caret line="60" column="59" lean-forward="false" selection-start-line="60" selection-start-column="59" selection-end-line="60" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/exportTrades.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="36" column="27" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
@@ -1368,17 +1386,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/javafxgui.java">
+    <entry file="file://$PROJECT_DIR$/src/exportPortfolios.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-165">
-          <caret line="61" column="59" lean-forward="true" selection-start-line="61" selection-start-column="59" selection-end-line="61" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scenario2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-64">
+        <state relative-caret-position="165">
           <caret line="26" column="37" lean-forward="false" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
           <folding />
         </state>
