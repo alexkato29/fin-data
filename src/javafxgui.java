@@ -52,10 +52,8 @@ public class javafxgui extends Application {
 
 //        System.out.println(portfolioDatabase);
 
-        Button optn1 = new Button("Scenario 1");
-        Button optn2 = new Button("Scenario 2");
-        Button optn3 = new Button("Scenario 3");
-        Button optn4 = new Button("Scenario 4");
+        Button optn1 = new Button("Download Trade Logs");
+        Button optn2 = new Button("Download Portfolios");
         Button dbBTN = new Button("Upload Trades to Database");
         Button changeDB = new Button("Change Database");
 
@@ -158,8 +156,6 @@ public class javafxgui extends Application {
 
         grid.add(optn1, 0,0);
         grid.add(optn2, 1,0);
-        grid.add(optn3, 2,0);
-        grid.add(optn4, 3, 0);
         grid.add(dbBTN, 0,1);
         grid.add(changeDB, 1, 2);
 
