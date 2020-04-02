@@ -15,20 +15,29 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 
-public class exportPortfolios implements EventHandler<javafx.event.ActionEvent> {
+public class exportPortfolio implements EventHandler<javafx.event.ActionEvent> {
 
     private Stage parentStage;
     private File defaultDirectory;
     private HashMap<String,Portfolio> portfolios;
+    private String accountNum;
 
-    public exportPortfolios(Stage parent, File defaultDirectory, HashMap<String,Portfolio> portfolios){
+    public exportPortfolio(Stage parent, File defaultDirectory, HashMap<String, Portfolio> portfolios){
         this.defaultDirectory = defaultDirectory;
         this.parentStage = parent;
         this.portfolios = portfolios;
     }
 
+    public exportPortfolio(Stage parent, File defaultDirectory, HashMap<String, Portfolio> portfolios, String accountNum){
+        this.defaultDirectory = defaultDirectory;
+        this.parentStage = parent;
+        this.portfolios = portfolios;
+        this.accountNum = accountNum;
+    }
+
     public void handle(javafx.event.ActionEvent event)  {
 
+        // TODO: Make two methods, one for all portfolios and one for an individual portfolio to be exported.
 
 
         try {

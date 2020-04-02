@@ -146,7 +146,7 @@ public class javafxgui extends Application {
 //
 //            }
 //        });
-        optn2.setOnAction(new exportPortfolios(primaryStage,defaultDirectory, portfolioDatabase.getPortfolios()));
+        optn2.setOnAction(new exportPortfolio(primaryStage,defaultDirectory, portfolioDatabase.getPortfolios()));
 
 
         GridPane grid = new GridPane();
