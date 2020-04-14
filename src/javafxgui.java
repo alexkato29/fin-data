@@ -57,6 +57,7 @@ public class javafxgui extends Application {
         Button optn3 = new Button("Scenario 3");
         Button optn4 = new Button("Scenario 4");
         Button dbBTN = new Button("Upload Trades to Database");
+        Button downloadBtn = new Button("Download Portfolios");
         Button changeDB = new Button("Change Database");
 
 
@@ -150,6 +151,7 @@ public class javafxgui extends Application {
 //            }
 //        });
         optn2.setOnAction(new scenario2(primaryStage,defaultDirectory, portfolioDatabase.getPortfolios()));
+        downloadBtn.setOnAction(new downloadTable(primaryStage, defaultDirectory, portfolioDatabase.getPortfolios()));
 
 
         GridPane grid = new GridPane();
@@ -162,6 +164,7 @@ public class javafxgui extends Application {
         grid.add(optn4, 3, 0);
         grid.add(dbBTN, 0,1);
         grid.add(changeDB, 1, 2);
+        grid.add(downloadBtn, 1, 3);
 
 
 
