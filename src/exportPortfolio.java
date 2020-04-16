@@ -1,5 +1,6 @@
 import javafx.event.Event;
 import javafx.event.EventHandler;
+import javafx.scene.control.Alert;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
@@ -40,10 +41,11 @@ public class exportPortfolio implements EventHandler<javafx.event.ActionEvent> {
         // TODO: Make two methods, one for all portfolios and one for an individual portfolio to be exported.
 
 
+
         try {
 
             for (Portfolio p : portfolios.values()){
-                FileWriter csvWriter = new FileWriter(p.getAccountNum() + ".csv");
+                FileWriter csvWriter = new FileWriter(defaultDirectory.getAbsoluteFile()+"\\exportedPortfolios\\" + p.getAccountNum() +"_portfolio.csv");
                 csvWriter.append("Ticker");
                 csvWriter.append(",");
                 csvWriter.append("Quantity");
@@ -59,11 +61,18 @@ public class exportPortfolio implements EventHandler<javafx.event.ActionEvent> {
                     csvWriter.append("\n");
                 }
 
+
+
                 csvWriter.flush();
                 csvWriter.close();
 
 
             }
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Export Portfolios");
+            alert.setHeaderText(null);
+            alert.setContentText("Portfolios have been exported");
+            alert.showAndWait();
 
 
 

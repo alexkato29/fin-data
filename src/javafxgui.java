@@ -52,13 +52,11 @@ public class javafxgui extends Application {
 
 //        System.out.println(portfolioDatabase);
 
-        Button optn1 = new Button("Scenario 1");
-        Button optn2 = new Button("Scenario 2");
-        Button optn3 = new Button("Scenario 3");
-        Button optn4 = new Button("Scenario 4");
+        Button optn1 = new Button("exportTrades");
+        Button optn2 = new Button("exportPortfolio");
+
         Button dbBTN = new Button("Upload Trades to Database");
         Button downloadBtn = new Button("Download Portfolios");
-        Button changeDB = new Button("Change Database");
 
 
 
@@ -138,19 +136,9 @@ public class javafxgui extends Application {
 
             }
         });
-        optn1.setOnAction(new scenario1(primaryStage, defaultDirectory));
-//        changeDB.setOnAction(new EventHandler<ActionEvent>() {
-//            @Override
-//            public void handle(ActionEvent event) {
-//                FileChooser fileChooser = new FileChooser();
-//                fileChooser.setInitialDirectory(defaultDirectory);
-//                File file = fileChooser.showOpenDialog(primaryStage);
-//                String dbFilePath = file.getAbsolutePath();
-//                portfolioDatabase = new Database(dbFilePath);
-//
-//            }
-//        });
-        optn2.setOnAction(new scenario2(primaryStage,defaultDirectory, portfolioDatabase.getPortfolios()));
+
+        optn1.setOnAction(new exportTrades(primaryStage, defaultDirectory));
+        optn2.setOnAction(new exportPortfolio(primaryStage,defaultDirectory, portfolioDatabase.getPortfolios()));
         downloadBtn.setOnAction(new downloadTable(primaryStage, defaultDirectory, portfolioDatabase.getPortfolios()));
 
 
@@ -160,13 +148,10 @@ public class javafxgui extends Application {
 
         grid.add(optn1, 0,0);
         grid.add(optn2, 1,0);
-        grid.add(optn3, 2,0);
-        grid.add(optn4, 3, 0);
-        grid.add(dbBTN, 0,1);
-        grid.add(changeDB, 1, 2);
-        grid.add(downloadBtn, 1, 3);
 
+        grid.add(dbBTN, 2,0);
 
+        grid.add(downloadBtn, 3, 0);
 
         grid.setAlignment(Pos.CENTER);
 
@@ -183,7 +168,6 @@ public class javafxgui extends Application {
         alert.setTitle(title);
         alert.setHeaderText(null);
         alert.setContentText(text);
-
         alert.showAndWait();
     }
 }
