@@ -16,7 +16,6 @@ import java.util.HashSet;
 import java.util.Map;
 
 public class scenario2 implements EventHandler<javafx.event.ActionEvent> {
-
     private Stage parentStage;
     private File defaultDirectory;
     private HashMap<String,Portfolio> portfolios;
@@ -28,8 +27,6 @@ public class scenario2 implements EventHandler<javafx.event.ActionEvent> {
     }
 
     public void handle(javafx.event.ActionEvent event)  {
-
-
 
         try {
 
@@ -52,10 +49,7 @@ public class scenario2 implements EventHandler<javafx.event.ActionEvent> {
 
                 csvWriter.flush();
                 csvWriter.close();
-
-
             }
-
 
 
 
