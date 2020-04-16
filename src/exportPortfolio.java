@@ -15,18 +15,30 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 
-public class scenario2 implements EventHandler<javafx.event.ActionEvent> {
+public class exportPortfolio implements EventHandler<javafx.event.ActionEvent> {
+
     private Stage parentStage;
     private File defaultDirectory;
     private HashMap<String,Portfolio> portfolios;
+    private String accountNum;
 
-    public scenario2(Stage parent, File defaultDirectory, HashMap<String,Portfolio> portfolios){
+    public exportPortfolio(Stage parent, File defaultDirectory, HashMap<String, Portfolio> portfolios){
         this.defaultDirectory = defaultDirectory;
         this.parentStage = parent;
         this.portfolios = portfolios;
     }
 
+    public exportPortfolio(Stage parent, File defaultDirectory, HashMap<String, Portfolio> portfolios, String accountNum){
+        this.defaultDirectory = defaultDirectory;
+        this.parentStage = parent;
+        this.portfolios = portfolios;
+        this.accountNum = accountNum;
+    }
+
     public void handle(javafx.event.ActionEvent event)  {
+
+        // TODO: Make two methods, one for all portfolios and one for an individual portfolio to be exported.
+
 
         try {
 
@@ -36,7 +48,7 @@ public class scenario2 implements EventHandler<javafx.event.ActionEvent> {
                 csvWriter.append(",");
                 csvWriter.append("Quantity");
                 csvWriter.append("\n");
-                
+
                 Map<String, Security> securities = p.getSecurities();
 
                 for (Map.Entry<String, Security> set : securities.entrySet()) {
@@ -49,7 +61,10 @@ public class scenario2 implements EventHandler<javafx.event.ActionEvent> {
 
                 csvWriter.flush();
                 csvWriter.close();
+
+
             }
+
 
 
 
