@@ -2,13 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91570491-00e6-425e-a1f3-7a15f28f9694" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/downloadTable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/sample-tradelogs.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/fin-data/downloadTable$1$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/fin-data/downloadTable$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/fin-data/downloadTable$2$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/fin-data/downloadTable$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/fin-data/downloadTable.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/2020-03-09_12-55.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/2020-03-09_12-55.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/sample-portfolio.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/fin-data/javafxgui$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/fin-data/javafxgui$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/123.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/456.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/newFormat.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/newtrade.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/test.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/test_sell_all_security.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/fin-data/javafxgui.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/fin-data/javafxgui.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/fin-data/scenario1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/fin-data/scenario2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/fin-data/scenario3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exportPortfolio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exportPortfolio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exportTrades.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exportTrades.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/javafxgui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/javafxgui.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -26,21 +38,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/javafxgui.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="346">
-              <caret line="153" column="22" lean-forward="true" selection-start-line="153" selection-start-column="22" selection-end-line="153" selection-end-column="22" />
+            <state relative-caret-position="364">
+              <caret line="70" column="20" lean-forward="true" selection-start-line="70" selection-start-column="20" selection-end-line="70" selection-end-column="70" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="class#1686:4324" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/downloadTable.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/portfolioScene.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
-              <caret line="91" column="28" lean-forward="true" selection-start-line="91" selection-start-column="28" selection-end-line="91" selection-end-column="28" />
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -49,35 +60,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/scene/control/TableCell.java">
+        <entry file="file://$PROJECT_DIR$/src/exportPortfolio.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="223" column="30" selection-start-line="223" selection-start-column="30" selection-end-line="223" selection-end-column="30" />
-              <folding>
-                <element signature="e#8171#8172#0" expanded="true" />
-                <element signature="e#8236#8237#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/scenario1.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="60" lean-forward="true" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="60" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Database.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="473">
-              <caret line="97" selection-start-line="97" selection-end-line="97" />
+            <state relative-caret-position="68">
+              <caret line="38" column="57" lean-forward="true" selection-start-line="38" selection-start-column="57" selection-end-line="38" selection-end-column="57" />
             </state>
           </provider>
         </entry>
@@ -85,7 +71,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/readData.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="901">
+            <state relative-caret-position="646">
               <caret line="53" selection-start-line="53" selection-end-line="53" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -97,7 +83,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Portfolio.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="541">
+            <state relative-caret-position="153">
               <caret line="45" column="32" selection-start-line="45" selection-start-column="11" selection-end-line="45" selection-end-column="32" />
               <folding>
                 <element signature="e#763#764#0" expanded="true" />
@@ -107,11 +93,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Security.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/exportTrades.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="3" lean-forward="true" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+            <state relative-caret-position="24">
+              <caret line="30" column="62" selection-start-line="30" selection-start-column="62" selection-end-line="30" selection-end-column="62" />
             </state>
           </provider>
         </entry>
@@ -139,6 +125,9 @@
       <find>Database Updated</find>
       <find>new Portfolio</find>
       <find>new Trade</find>
+      <find>dbBtn</find>
+      <find>show</find>
+      <find>showAlert</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -166,9 +155,11 @@
         <option value="$PROJECT_DIR$/src/scenario1.java" />
         <option value="$PROJECT_DIR$/src/readData.java" />
         <option value="$PROJECT_DIR$/src/scenario2.java" />
-        <option value="$PROJECT_DIR$/src/javafxgui.java" />
         <option value="$PROJECT_DIR$/src/Database.java" />
         <option value="$PROJECT_DIR$/src/downloadTable.java" />
+        <option value="$PROJECT_DIR$/src/javafxgui.java" />
+        <option value="$PROJECT_DIR$/src/exportTrades.java" />
+        <option value="$PROJECT_DIR$/src/exportPortfolio.java" />
       </list>
     </option>
   </component>
@@ -178,9 +169,9 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="70" />
-    <option name="y" value="-15" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="1726" />
+    <option name="y" value="-8" />
     <option name="width" value="1143" />
     <option name="height" value="563" />
   </component>
@@ -189,8 +180,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -218,7 +209,7 @@
     <property name="ToolWindowRun.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1586882786444" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1586883077136" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
     <property name="js.eslint.eslintPackage" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/javafx-sdk-11.0.2/lib" />
@@ -822,17 +813,24 @@
       <option name="project" value="LOCAL" />
       <updated>1585234327027</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="download gui done">
+      <created>1586882993296</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1586882993296</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="2350000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <frame x="1912" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20042644" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28744328" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Nl-Palette" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -842,7 +840,7 @@
       <window_info id="Capture Tool" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3290461" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.49436393" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -892,9 +890,22 @@
         </entry>
       </map>
     </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="conversion to javafx" />
     <MESSAGE value="created trade class" />
     <MESSAGE value="csvreading progress" />
     <MESSAGE value="milestone due" />
@@ -919,7 +930,8 @@
     <MESSAGE value="did the first todo" />
     <MESSAGE value="made the structure better" />
     <MESSAGE value="scenario 2 complete" />
-    <option name="LAST_COMMIT_MESSAGE" value="scenario 2 complete" />
+    <MESSAGE value="download gui done" />
+    <option name="LAST_COMMIT_MESSAGE" value="download gui done" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -927,7 +939,6 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/test3.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/application/Application.java" />
     <entry file="file://$PROJECT_DIR$/src/CSVMethods.java" />
     <entry file="file://$PROJECT_DIR$/src/gui.java" />
     <entry file="file://$PROJECT_DIR$/src/commonscsv.java" />
@@ -939,13 +950,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/JSONExamples/TradeToJSON.java" />
-    <entry file="file://$PROJECT_DIR$/src/portfolioScene.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/JSONExamples/JSONTest.java" />
     <entry file="file://$PROJECT_DIR$/src/JSONExamples/CreateJSON.java" />
     <entry file="jar://$PROJECT_DIR$/lib/json-simple-1.1.1.jar!/org/json/simple/parser/JSONParser.class">
@@ -975,13 +979,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/scenario3.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scenario3.java" />
     <entry file="file://$PROJECT_DIR$/src/testjson.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -1003,31 +1001,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Security.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="3" lean-forward="true" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Portfolio.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="541">
-          <caret line="45" column="32" selection-start-line="45" selection-start-column="11" selection-end-line="45" selection-end-column="32" />
-          <folding>
-            <element signature="e#763#764#0" expanded="true" />
-            <element signature="e#796#797#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scenario2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="23" column="58" lean-forward="true" selection-start-line="23" selection-start-column="58" selection-end-line="23" selection-end-column="94" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scenario2.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/event/EventHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -1035,10 +1009,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/readData.java">
+    <entry file="file://$PROJECT_DIR$/src/scenario1.java" />
+    <entry file="file://$PROJECT_DIR$/src/Security.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
-          <caret line="53" selection-start-line="53" selection-end-line="53" />
+        <state relative-caret-position="34">
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/downloadTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-527">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1047,29 +1029,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Database.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="473">
+        <state relative-caret-position="780">
           <caret line="97" selection-start-line="97" selection-end-line="97" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scenario1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="60" lean-forward="true" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="60" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/javafxgui.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="153" column="22" lean-forward="true" selection-start-line="153" selection-start-column="22" selection-end-line="153" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="class#1686:4324" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1084,13 +1045,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/downloadTable.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/application/Application.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="91" column="28" lean-forward="true" selection-start-line="91" selection-start-column="28" selection-end-line="91" selection-end-column="28" />
+        <state relative-caret-position="2941">
+          <caret line="304" column="25" selection-start-line="304" selection-start-column="25" selection-end-line="304" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/readData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="53" selection-start-line="53" selection-end-line="53" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Portfolio.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="45" column="32" selection-start-line="45" selection-start-column="11" selection-end-line="45" selection-end-column="32" />
+          <folding>
+            <element signature="e#763#764#0" expanded="true" />
+            <element signature="e#796#797#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/portfolioScene.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/javafxgui.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="70" column="20" lean-forward="true" selection-start-line="70" selection-start-column="20" selection-end-line="70" selection-end-column="70" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/exportPortfolio.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="38" column="57" lean-forward="true" selection-start-line="38" selection-start-column="57" selection-end-line="38" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/exportTrades.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="30" column="62" selection-start-line="30" selection-start-column="62" selection-end-line="30" selection-end-column="62" />
         </state>
       </provider>
     </entry>
