@@ -1,0 +1,40 @@
+{
+    "portfolios": [
+
+        {
+            "accountNum": "123",
+            "accountHolder": "Alex Katopodis",
+            "isIndividual": true,
+            "portfolioValue": 3.98,
+            "securities": [
+                {   "ticker" : "FCASH",
+                    "quantity": 315,
+                    "price": 1
+                },
+                { 
+                    "ticker": "FDRXX",
+                    "quantity": 1,
+                    "price": 1.99
+                }
+            ]
+        },
+
+        {
+            "accountNum": "456",
+            "accountHolder": "Bob",
+            "isIndividual": true,
+            "portfolioValue": 3.98,
+            "securities": [
+                {   "ticker": "TSLA",
+                    "quantity": 420,
+                    "price": 67
+                },
+                {
+                    "ticker": "AAPL",
+                    "quantity": 3,
+                    "price": 678
+                }
+            ]
+        }
+    ]
+}

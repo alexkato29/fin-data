@@ -2,25 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91570491-00e6-425e-a1f3-7a15f28f9694" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/data/sample-tradelogs.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/fin-data/downloadTable$1$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/fin-data/downloadTable$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/fin-data/downloadTable$2$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/fin-data/downloadTable$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/fin-data/downloadTable.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/123.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/456.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/newFormat.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/newtrade.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/test.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/test_sell_all_security.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/fin-data/javafxgui.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/fin-data/javafxgui.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/fin-data/scenario1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/fin-data/scenario2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/fin-data/scenario3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exportPortfolio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exportPortfolio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exportTrades.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exportTrades.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/exportedPortfolios/123_trade.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/exportedPortfolios/4569_trade.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/exportedPortfolios/456_trade.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/javafxgui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/javafxgui.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -35,11 +20,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/javafxgui.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="70" column="20" lean-forward="true" selection-start-line="70" selection-start-column="20" selection-end-line="70" selection-end-column="70" />
+            <state relative-caret-position="58">
+              <caret line="52" column="48" lean-forward="true" selection-start-line="52" selection-start-column="48" selection-end-line="53" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -62,8 +47,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/exportPortfolio.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="38" column="57" lean-forward="true" selection-start-line="38" selection-start-column="57" selection-end-line="38" selection-end-column="57" />
+            <state relative-caret-position="374">
+              <caret line="38" column="57" selection-start-line="38" selection-start-column="57" selection-end-line="38" selection-end-column="57" />
             </state>
           </provider>
         </entry>
@@ -83,7 +68,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Portfolio.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
+            <state relative-caret-position="561">
               <caret line="45" column="32" selection-start-line="45" selection-start-column="11" selection-end-line="45" selection-end-column="32" />
               <folding>
                 <element signature="e#763#764#0" expanded="true" />
@@ -93,10 +78,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/exportTrades.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="24">
+            <state relative-caret-position="306">
               <caret line="30" column="62" selection-start-line="30" selection-start-column="62" selection-end-line="30" selection-end-column="62" />
             </state>
           </provider>
@@ -157,9 +142,9 @@
         <option value="$PROJECT_DIR$/src/scenario2.java" />
         <option value="$PROJECT_DIR$/src/Database.java" />
         <option value="$PROJECT_DIR$/src/downloadTable.java" />
-        <option value="$PROJECT_DIR$/src/javafxgui.java" />
         <option value="$PROJECT_DIR$/src/exportTrades.java" />
         <option value="$PROJECT_DIR$/src/exportPortfolio.java" />
+        <option value="$PROJECT_DIR$/src/javafxgui.java" />
       </list>
     </option>
   </component>
@@ -169,9 +154,9 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="1726" />
-    <option name="y" value="-8" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1694" />
+    <option name="y" value="-14" />
     <option name="width" value="1143" />
     <option name="height" value="563" />
   </component>
@@ -181,7 +166,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -203,6 +187,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -830,7 +815,7 @@
     <frame x="1912" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28744328" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.41225415" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Nl-Palette" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -840,7 +825,7 @@
       <window_info id="Capture Tool" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.49436393" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.74235106" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -972,13 +957,7 @@
     <entry file="file://$PROJECT_DIR$/data/2020-02-06_19-20.json" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/util/Map.java" />
     <entry file="file://$PROJECT_DIR$/data/sample-portfolio.csv" />
-    <entry file="file://$PROJECT_DIR$/data/newFormat.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="33" lean-forward="true" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/data/newFormat.json" />
     <entry file="file://$PROJECT_DIR$/src/scenario3.java" />
     <entry file="file://$PROJECT_DIR$/src/testjson.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1052,6 +1031,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/exportPortfolio.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="38" column="57" selection-start-line="38" selection-start-column="57" selection-end-line="38" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/readData.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="646">
@@ -1064,12 +1050,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Portfolio.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
+        <state relative-caret-position="561">
           <caret line="45" column="32" selection-start-line="45" selection-start-column="11" selection-end-line="45" selection-end-column="32" />
           <folding>
             <element signature="e#763#764#0" expanded="true" />
             <element signature="e#796#797#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/exportTrades.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="30" column="62" selection-start-line="30" selection-start-column="62" selection-end-line="30" selection-end-column="62" />
         </state>
       </provider>
     </entry>
@@ -1085,25 +1078,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/javafxgui.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="70" column="20" lean-forward="true" selection-start-line="70" selection-start-column="20" selection-end-line="70" selection-end-column="70" />
+        <state relative-caret-position="58">
+          <caret line="52" column="48" lean-forward="true" selection-start-line="52" selection-start-column="48" selection-end-line="53" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/exportPortfolio.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="38" column="57" lean-forward="true" selection-start-line="38" selection-start-column="57" selection-end-line="38" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/exportTrades.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="30" column="62" selection-start-line="30" selection-start-column="62" selection-end-line="30" selection-end-column="62" />
         </state>
       </provider>
     </entry>

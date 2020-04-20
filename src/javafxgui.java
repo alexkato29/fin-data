@@ -52,8 +52,8 @@ public class javafxgui extends Application {
 
 //        System.out.println(portfolioDatabase);
 
-        Button optn1 = new Button("exportTrades");
-        Button optn2 = new Button("exportPortfolio");
+        Button optn1 = new Button("Reformat Trades (StockRover)");
+        Button optn2 = new Button("Reformat Portfolio ");
 
         Button dbBTN = new Button("Upload Trades to Database");
         Button downloadBtn = new Button("Download Portfolios");
