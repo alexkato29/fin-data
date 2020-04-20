@@ -1,6 +1,7 @@
 import javafx.event.ActionEvent;
 
 import javafx.event.EventHandler;
+import javafx.scene.control.Alert;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
@@ -27,8 +28,9 @@ public class exportTrades implements EventHandler<ActionEvent> {
 
         try {
             FileChooser fileChooser = new FileChooser();
-            File file = fileChooser.showOpenDialog(parentStage);
             fileChooser.setInitialDirectory(defaultDirectory);
+            File file = fileChooser.showOpenDialog(parentStage);
+
 
             tradeList = readData.csvParse(file.getAbsolutePath());
 
@@ -43,7 +45,7 @@ public class exportTrades implements EventHandler<ActionEvent> {
 
 
             for (String accountNum: accountNumbers){
-                FileWriter csvWriter = new FileWriter(accountNum+".csv");
+                FileWriter csvWriter = new FileWriter(defaultDirectory.getAbsoluteFile()+"\\exportedTrades\\"+ accountNum+"_trade.csv");
                 csvWriter.append("Ticker");
                 csvWriter.append(",");
                 csvWriter.append("Quantity");
@@ -63,7 +65,16 @@ public class exportTrades implements EventHandler<ActionEvent> {
                 csvWriter.close();
 
 
+
+
+
+
             }
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Export Trades");
+            alert.setHeaderText(null);
+            alert.setContentText("Trades have been exported");
+            alert.showAndWait();
 
 
 
