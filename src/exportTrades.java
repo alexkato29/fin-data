@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashSet;
 
-public class exportTrades implements EventHandler<ActionEvent> {
+public class exportTrades {
 
     private Stage parentStage;
     private File defaultDirectory;
@@ -21,62 +21,40 @@ public class exportTrades implements EventHandler<ActionEvent> {
         this.parentStage = parent;
     }
 
-    public void handle(ActionEvent event)  {
+    public void export (String accountNum)  {
 
         ArrayList<Trade> tradeList;
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setInitialDirectory(defaultDirectory);
+        File file = fileChooser.showOpenDialog(parentStage);
+        HashSet<String> accountNumbers = new HashSet<>();
 
         try {
-            FileChooser fileChooser = new FileChooser();
-            fileChooser.setInitialDirectory(defaultDirectory);
-            File file = fileChooser.showOpenDialog(parentStage);
-
-
             tradeList = readData.tradeCsvParse(file.getAbsolutePath());
+            FileWriter csvWriter = new FileWriter(defaultDirectory.getAbsoluteFile()+"\\exportedTrades\\"+ accountNum+"_trade.csv");
+            csvWriter.append("Ticker");
+            csvWriter.append(",");
+            csvWriter.append("Quantity");
+            csvWriter.append("\n");
 
+            for(Trade t: tradeList){
+                if (t.getAccountNum().equals(accountNum)){
+                    csvWriter.append(t.getTicker());
+                    csvWriter.append(",");
+                    csvWriter.append(Double.toString(t.getQuantity()));
+                    csvWriter.append("\n");
 
-
-            HashSet<String> accountNumbers = new HashSet<>();
-
-
-            for (Trade t : tradeList) {
-                accountNumbers.add(t.getAccountNum());
-            }
-
-
-            for (String accountNum: accountNumbers){
-                FileWriter csvWriter = new FileWriter(defaultDirectory.getAbsoluteFile()+"\\exportedTrades\\"+ accountNum+"_trade.csv");
-                csvWriter.append("Ticker");
-                csvWriter.append(",");
-                csvWriter.append("Quantity");
-                csvWriter.append("\n");
-
-                for(Trade t: tradeList){
-                    if (t.getAccountNum().equals(accountNum)){
-                        csvWriter.append(t.getTicker());
-                        csvWriter.append(",");
-                        csvWriter.append(Double.toString(t.getQuantity()));
-                        csvWriter.append("\n");
-
-                    }
                 }
-
-                csvWriter.flush();
-                csvWriter.close();
-
-
-
-
-
-
             }
+
+            csvWriter.flush();
+            csvWriter.close();
+
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Export Trades");
             alert.setHeaderText(null);
             alert.setContentText("Trades have been exported");
             alert.showAndWait();
-
-
-
 
         } catch (IOException e){
             System.out.println("File Not Chosen");
