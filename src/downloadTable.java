@@ -75,7 +75,7 @@ public class downloadTable implements EventHandler<javafx.event.ActionEvent>{
                     {
                         btn.setOnAction((ActionEvent event) -> {
                             Portfolio portfolio = getTableView().getItems().get(getIndex());
-                            exportTrades E = new exportTrades(REPLACE THIS WITH PARENT STAGE ,defaultDirectory);
+                            exportTrades E = new exportTrades(parentStage ,defaultDirectory);
                             E.export(portfolio.getAccountNum());
                         });
                     }
