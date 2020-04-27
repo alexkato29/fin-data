@@ -1,5 +1,4 @@
 import javafx.application.Application;
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
@@ -50,17 +49,35 @@ public class javafxgui extends Application {
         showAlert("Database Update", "Database has been Uploaded");
 
 
-//        System.out.println(portfolioDatabase);
 
-        Button optn1 = new Button("Reformat Trades (StockRover)");
-        Button optn2 = new Button("Reformat Portfolio ");
 
-        Button dbBTN = new Button("Upload Trades to Database");
+
+        /*
+        Download Related Buttons - Does not Change JSON Database
+         */
+        Button exportTradesBtn = new Button("Reformat Trades (StockRover)");
+        Button exportPortfolioBtn = new Button("Reformat Portfolio ");
         Button downloadBtn = new Button("Download Portfolios");
 
 
+        /*
+        Upload Related Buttons - Does change the JSON Database
+         */
+        Button uploadTradesBtn = new Button("Upload Trades to Database");
+        Button addPortfolioBtn = new Button("Add Portfolio");
+        Button saveDatabaseBtn = new Button("Save Database");
 
-        dbBTN.setOnAction(new EventHandler<ActionEvent>() {
+
+
+
+
+
+
+        /*
+        Gets a trade log from the client and uploads it and updating the database
+         */
+
+        uploadTradesBtn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
 
@@ -71,30 +88,57 @@ public class javafxgui extends Application {
                     fileChooser.setInitialDirectory(defaultDirectory);
                     File file = fileChooser.showOpenDialog(primaryStage);
 
-
-
-                    tradeList = readData.csvParse(file.getAbsolutePath());
-
-
+                    tradeList = readData.tradeCsvParse(file.getAbsolutePath());
 
                     for (Trade t: tradeList){
-
                         portfolioDatabase.applyTrade(t);
                     }
 
+
+                    showAlert("Database Update", "Database has been Updated");
                     System.out.println("Database Updated");
-//                    System.out.println(portfolioDatabase);
 
 
                 } catch (IOException e){
                     System.out.println("File Not Chosen");
                 }
 
-                Map<String, Portfolio> portfolios = portfolioDatabase.getPortfolios();
 
 
+
+//                Move this to save when
+
+
+            }
+        });
+        addPortfolioBtn.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                Portfolio add;
+                try {
+                    FileChooser fileChooser = new FileChooser();
+                    fileChooser.setInitialDirectory(defaultDirectory);
+                    File file = fileChooser.showOpenDialog(primaryStage);
+
+                    add = readData.portfolioCsvParse(file.getAbsolutePath());
+                    portfolioDatabase.addPortfolio(add);
+                    showAlert("Add Portfolio", "Portfolio has been added");
+
+
+                } catch (IOException e){
+                    System.out.println("File Not Chosen");
+                }
+
+
+
+            }
+        });
+        saveDatabaseBtn.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
                 JSONObject data = new JSONObject();
                 JSONArray array = new JSONArray();
+                Map<String, Portfolio> portfolios = portfolioDatabase.getPortfolios();
                 for (Portfolio p : portfolios.values()){
                     JSONObject jsonPortfolio = new JSONObject();
                     jsonPortfolio.put("accountNum", p.getAccountNum());
@@ -115,14 +159,7 @@ public class javafxgui extends Application {
 
 
                     array.add(jsonPortfolio);
-
-
-
-
                 }
-
-
-
 
                 String fileName = new SimpleDateFormat("yyyy-MM-dd_HH-mm'.json'").format(new Date());
                 data.put("portfolios", array);
@@ -133,12 +170,10 @@ public class javafxgui extends Application {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-
             }
         });
-
-        optn1.setOnAction(new exportTrades(primaryStage, defaultDirectory));
-        optn2.setOnAction(new exportPortfolio(primaryStage,defaultDirectory, portfolioDatabase.getPortfolios()));
+        exportTradesBtn.setOnAction(new exportTrades(primaryStage, defaultDirectory));
+        exportPortfolioBtn.setOnAction(new exportPortfolio(primaryStage,defaultDirectory, portfolioDatabase.getPortfolios()));
         downloadBtn.setOnAction(new downloadTable(primaryStage, defaultDirectory, portfolioDatabase.getPortfolios()));
 
 
@@ -146,12 +181,12 @@ public class javafxgui extends Application {
         grid.setHgap(10);
         grid.setVgap(10);
 
-        grid.add(optn1, 0,0);
-        grid.add(optn2, 1,0);
-
-        grid.add(dbBTN, 2,0);
-
-        grid.add(downloadBtn, 3, 0);
+        grid.add(exportTradesBtn, 0,0);
+        grid.add(exportPortfolioBtn, 1,0);
+        grid.add(downloadBtn, 2, 0);
+        grid.add(uploadTradesBtn, 0,1);
+        grid.add(addPortfolioBtn, 1, 1);
+        grid.add(saveDatabaseBtn, 2, 1);
 
         grid.setAlignment(Pos.CENTER);
 

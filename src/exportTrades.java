@@ -10,7 +10,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.Set;
 
 public class exportTrades implements EventHandler<ActionEvent> {
 
@@ -32,7 +31,7 @@ public class exportTrades implements EventHandler<ActionEvent> {
             File file = fileChooser.showOpenDialog(parentStage);
 
 
-            tradeList = readData.csvParse(file.getAbsolutePath());
+            tradeList = readData.tradeCsvParse(file.getAbsolutePath());
 
 
 

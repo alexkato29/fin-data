@@ -1,9 +1,3 @@
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
-
-import java.io.*;
 import java.util.ArrayList;
 
 public class testjson {
@@ -12,7 +6,7 @@ public class testjson {
         Database db = new Database("./data/newFormat.json");
 
         try{
-            ArrayList<Trade> test = readData.csvParse("./data/newtrade.csv");
+            ArrayList<Trade> test = readData.tradeCsvParse("./data/newtrade.csv");
             System.out.println(test);
         }
         catch (Exception e){
