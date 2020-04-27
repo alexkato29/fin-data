@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
-public class exportTrades implements EventHandler<ActionEvent> {
+public class exportTrades {
 
     private Stage parentStage;
     private File defaultDirectory;
@@ -22,7 +22,7 @@ public class exportTrades implements EventHandler<ActionEvent> {
         this.parentStage = parent;
     }
 
-    public void handle(ActionEvent event)  {
+    public void export ()  {
 
         ArrayList<Trade> tradeList;
 

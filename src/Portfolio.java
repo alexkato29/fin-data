@@ -1,3 +1,6 @@
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Map;
@@ -109,6 +112,36 @@ public class Portfolio {
             }
         }
     }
+
+    public void export (File defaultDirectory) {
+
+        try {
+
+            FileWriter csvWriter = new FileWriter(defaultDirectory.getAbsoluteFile()+"\\exportedPortfolios\\" + getAccountHolder() +"_portfolio.csv");
+            csvWriter.append("Ticker");
+            csvWriter.append(",");
+            csvWriter.append("Quantity");
+            csvWriter.append("\n");
+
+            Map<String, Security> securities = getSecurities();
+
+            for (Map.Entry<String, Security> set : securities.entrySet()) {
+                Security s = set.getValue();
+                csvWriter.append(s.getTicker());
+                csvWriter.append(",");
+                csvWriter.append(Double.toString(s.getQuantity()));
+                csvWriter.append("\n");
+            }
+
+            csvWriter.flush();
+            csvWriter.close();
+
+
+        } catch (IOException e){
+            System.out.println("File Not Chosen");
+        }
+    }
+
     public String toString(){
         StringBuilder str = new StringBuilder("------Portfolio-----\n");
         for (Security s: securities.values()) {

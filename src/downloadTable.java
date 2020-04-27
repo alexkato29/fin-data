@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 import javafx.util.Callback;
 
 
+
 import java.io.File;
 import java.util.HashMap;
 
@@ -73,10 +74,9 @@ public class downloadTable implements EventHandler<javafx.event.ActionEvent>{
 
                     {
                         btn.setOnAction((ActionEvent event) -> {
-                            // TODO: PUT YOUR CODE HERE
-                            Portfolio portfolio = getTableView().getItems().get(getIndex());
-                            System.out.println(portfolio);
-
+                            //TODO: Find a way to get a tradelog from a portfolio...
+                            exportTrades E = new exportTrades(REPLACE THIS WITH PARENT STAGE ,defaultDirectory);
+                            E.export();
                         });
                     }
 
@@ -102,9 +102,9 @@ public class downloadTable implements EventHandler<javafx.event.ActionEvent>{
 
                     {
                         btn.setOnAction((ActionEvent event) -> {
-                            // TODO: PUT YOUR CODE HERE
                             Portfolio portfolio = getTableView().getItems().get(getIndex());
                             System.out.println(portfolio);
+                            portfolio.export(defaultDirectory);
 
                         });
                     }
