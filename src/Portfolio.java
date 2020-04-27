@@ -110,7 +110,7 @@ public class Portfolio {
         }
     }
     public String toString(){
-        StringBuilder str = new StringBuilder("------Portfolio-----\n");
+        StringBuilder str = new StringBuilder("------" + accountHolder +"-----\n");
         for (Security s: securities.values()) {
             str.append(s.toString());
             str.append("\n");

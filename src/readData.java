@@ -14,15 +14,14 @@ import java.io.Reader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
+import java.util.*;
 
 
 public class readData {
 
     private final int ACCOUNT_NUM_COL = 0;
 
-    public static ArrayList<Trade> csvParse(String tradeFilePath) throws IOException {
+    public static ArrayList<Trade> tradeCsvParse(String tradeFilePath) throws IOException {
         ArrayList<Trade> csvTrades = new ArrayList<>();
         try{
             Reader reader = Files.newBufferedReader(Paths.get(tradeFilePath));
@@ -49,6 +48,46 @@ public class readData {
             System.out.println("You must pick a file");
         }
         return csvTrades;
+    }
+    public static Portfolio portfolioCsvParse(String portfolioFilePath) throws IOException {
+        Portfolio add ;
+        try{
+            Reader reader = Files.newBufferedReader(Paths.get(portfolioFilePath));
+            CSVParser csvParser = new CSVParser(reader, CSVFormat.DEFAULT);
+
+
+            List<CSVRecord> recordList =csvParser.getRecords();
+            recordList.remove(0);
+            CSVRecord firstRow =  recordList.get(0);
+
+
+
+            System.out.println(firstRow);
+            String accountNum = firstRow.get(0);
+            String accountHolder = firstRow.get(3);
+            Map<String, Security> securities = new HashMap<>();
+            double totalValue = 0;
+
+
+            for (CSVRecord csvRecord : recordList) {
+
+                if(csvRecord.get(0).equalsIgnoreCase("")) break;
+                String ticker = csvRecord.get(6);
+                double quantity = Double.parseDouble(csvRecord.get(8).replaceAll(",",""));
+                double price = Double.parseDouble(csvRecord.get(10).replaceAll("\\$","").replaceAll(",", ""));
+                totalValue += quantity * price;
+                securities.put(ticker, new Security(ticker, quantity, price));
+            }
+            //TODO: Check up on isINdividual if it should be true or not
+            add = new Portfolio(accountNum, accountHolder, true, securities, totalValue );
+
+            return add;
+        } catch (IOException e){
+            System.out.println("You must pick a file");
+        }
+        return null;
+
+
     }
 
 
