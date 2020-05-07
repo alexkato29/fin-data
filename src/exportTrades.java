@@ -2,6 +2,7 @@ import javafx.event.ActionEvent;
 
 import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
+import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
@@ -14,10 +15,9 @@ import java.util.HashSet;
 public class exportTrades {
 
     private Stage parentStage;
-    private File defaultDirectory;
 
-    public exportTrades(Stage parent, File defaultDirectory){
-        this.defaultDirectory = defaultDirectory;
+
+    public exportTrades(Stage parent){
         this.parentStage = parent;
     }
 
@@ -25,13 +25,15 @@ public class exportTrades {
 
         ArrayList<Trade> tradeList;
         FileChooser fileChooser = new FileChooser();
-        fileChooser.setInitialDirectory(defaultDirectory);
+//        fileChooser.setInitialDirectory(defaultDirectory);
         File file = fileChooser.showOpenDialog(parentStage);
         HashSet<String> accountNumbers = new HashSet<>();
 
         try {
             tradeList = readData.tradeCsvParse(file.getAbsolutePath());
-            FileWriter csvWriter = new FileWriter(defaultDirectory.getAbsoluteFile()+"\\exportedTrades\\"+ accountNum+"_trade.csv");
+            DirectoryChooser dirchooser = new DirectoryChooser();
+            File directory = dirchooser.showDialog(parentStage);
+            FileWriter csvWriter = new FileWriter( directory.getAbsoluteFile() + "\\" + accountNum+"_trade.csv");
             csvWriter.append("Ticker");
             csvWriter.append(",");
             csvWriter.append("Quantity");

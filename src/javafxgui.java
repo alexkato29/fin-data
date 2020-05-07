@@ -6,6 +6,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
+import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
@@ -26,21 +27,20 @@ import java.util.Map;
 public class javafxgui extends Application {
 
     Database portfolioDatabase;
-    File defaultDirectory = new File(".\\data");
-
     public static void main(String[] args) {
         launch(args);
     }
 
     @Override
     public void start(Stage primaryStage) {
+
+
+
+
+
         primaryStage.setTitle("Portfolio Management");
-
-
         FileChooser fileChooser = new FileChooser();
-        fileChooser.setInitialDirectory(defaultDirectory);
-
-
+//        fileChooser.setInitialDirectory(defaultDirectory);
 
         String database_file_path = fileChooser.showOpenDialog(primaryStage).getAbsolutePath();
         portfolioDatabase = new Database(database_file_path);
@@ -73,9 +73,9 @@ public class javafxgui extends Application {
 
 
 
-        /*
-        Gets a trade log from the client and uploads it and updating the database
-         */
+
+//        Gets a trade log from the client and uploads it and updating the database
+
 
         uploadTradesBtn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -85,7 +85,7 @@ public class javafxgui extends Application {
 
                 try {
                     FileChooser fileChooser = new FileChooser();
-                    fileChooser.setInitialDirectory(defaultDirectory);
+//                    fileChooser.setInitialDirectory(defaultDirectory);
                     File file = fileChooser.showOpenDialog(primaryStage);
 
                     tradeList = readData.tradeCsvParse(file.getAbsolutePath());
@@ -117,7 +117,7 @@ public class javafxgui extends Application {
                 Portfolio add;
                 try {
                     FileChooser fileChooser = new FileChooser();
-                    fileChooser.setInitialDirectory(defaultDirectory);
+//                    fileChooser.setInitialDirectory(defaultDirectory);
                     File file = fileChooser.showOpenDialog(primaryStage);
 
                     add = readData.portfolioCsvParse(file.getAbsolutePath());
@@ -163,7 +163,10 @@ public class javafxgui extends Application {
 
                 String fileName = new SimpleDateFormat("yyyy-MM-dd_HH-mm'.json'").format(new Date());
                 data.put("portfolios", array);
-                try (FileWriter file =  new FileWriter(defaultDirectory.getAbsoluteFile()+"\\"+fileName, true);) {
+                DirectoryChooser saveFolder = new DirectoryChooser();
+                File directory = saveFolder.showDialog(primaryStage);
+
+                try (FileWriter file =  new FileWriter(directory.getAbsoluteFile()+"\\"+fileName, true);) {
                     file.write(data.toJSONString());
                     file.flush();
                     showAlert("Database Update", fileName + " file has been database created.\n");
@@ -172,17 +175,17 @@ public class javafxgui extends Application {
                 }
             }
         });
-        exportTradesBtn.setOnAction(new exportTrades(primaryStage, defaultDirectory));
-        exportPortfolioBtn.setOnAction(new exportPortfolio(primaryStage,defaultDirectory, portfolioDatabase.getPortfolios()));
-        downloadBtn.setOnAction(new downloadTable(primaryStage, defaultDirectory, portfolioDatabase.getPortfolios()));
+//        exportTradesBtn.setOnAction(new exportTrades(primaryStage, defaultDirectory));
+//        exportPortfolioBtn.setOnAction(new exportPortfolio(primaryStage,defaultDirectory, portfolioDatabase.getPortfolios()));
+        downloadBtn.setOnAction(new downloadTable(primaryStage, portfolioDatabase.getPortfolios()));
 
 
         GridPane grid = new GridPane();
         grid.setHgap(10);
         grid.setVgap(10);
 
-        grid.add(exportTradesBtn, 0,0);
-        grid.add(exportPortfolioBtn, 1,0);
+//        grid.add(exportTradesBtn, 0,0);
+//        grid.add(exportPortfolioBtn, 1,0);
         grid.add(downloadBtn, 2, 0);
         grid.add(uploadTradesBtn, 0,1);
         grid.add(addPortfolioBtn, 1, 1);

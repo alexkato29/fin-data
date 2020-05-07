@@ -4,6 +4,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
+import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 
@@ -15,12 +16,11 @@ import java.util.HashMap;
 public class downloadTable implements EventHandler<javafx.event.ActionEvent>{
 
     private Stage parentStage;
-    private File defaultDirectory;
     TableView tableView;
     private HashMap<String,Portfolio> portfolios;
-    public downloadTable(Stage primaryStage, File defaultDirectory, HashMap<String,Portfolio> portfolios){
+    public downloadTable(Stage primaryStage, HashMap<String,Portfolio> portfolios){
         this.parentStage = primaryStage;
-        this.defaultDirectory = defaultDirectory;
+
         this.portfolios= portfolios;
     }
 
@@ -75,7 +75,7 @@ public class downloadTable implements EventHandler<javafx.event.ActionEvent>{
                     {
                         btn.setOnAction((ActionEvent event) -> {
                             Portfolio portfolio = getTableView().getItems().get(getIndex());
-                            exportTrades E = new exportTrades(parentStage ,defaultDirectory);
+                            exportTrades E = new exportTrades(parentStage);
                             E.export(portfolio.getAccountNum());
                         });
                     }
@@ -104,7 +104,9 @@ public class downloadTable implements EventHandler<javafx.event.ActionEvent>{
                         btn.setOnAction((ActionEvent event) -> {
                             Portfolio portfolio = getTableView().getItems().get(getIndex());
                             System.out.println(portfolio);
-                            portfolio.export(defaultDirectory);
+                            DirectoryChooser dirchooser = new DirectoryChooser();
+                            File saveFolder = dirchooser.showDialog(parentStage);
+                            portfolio.export(saveFolder);
 
                         });
                     }
