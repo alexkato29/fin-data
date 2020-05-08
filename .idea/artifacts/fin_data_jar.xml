@@ -1,0 +1,12 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="fin-data:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/fin_data_jar</output-path>
+    <root id="archive" name="fin-data.jar">
+      <element id="module-output" name="fin-data" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/commons-csv-1.7.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/json-simple-1.1.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/commons-csv-1.7-sources.jar" path-in-jar="/" />
+      <element id="library" level="project" name="lib" />
+    </root>
+  </artifact>
+</component>

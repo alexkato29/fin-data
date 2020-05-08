@@ -27,6 +27,8 @@ import java.util.Map;
 public class javafxgui extends Application {
 
     Database portfolioDatabase;
+//    private File defaultDirectory = new File("./files");
+    private File  defaultDirectory = new File("./");
     public static void main(String[] args) {
         launch(args);
     }
@@ -40,7 +42,7 @@ public class javafxgui extends Application {
 
         primaryStage.setTitle("Portfolio Management");
         FileChooser fileChooser = new FileChooser();
-//        fileChooser.setInitialDirectory(defaultDirectory);
+        fileChooser.setInitialDirectory(defaultDirectory);
 
         String database_file_path = fileChooser.showOpenDialog(primaryStage).getAbsolutePath();
         portfolioDatabase = new Database(database_file_path);
@@ -55,6 +57,7 @@ public class javafxgui extends Application {
         /*
         Download Related Buttons - Does not Change JSON Database
          */
+        Button testBtn = new Button("Testing Directories");
         Button exportTradesBtn = new Button("Reformat Trades (StockRover)");
         Button exportPortfolioBtn = new Button("Reformat Portfolio ");
         Button downloadBtn = new Button("Download Portfolios");
@@ -76,6 +79,12 @@ public class javafxgui extends Application {
 
 //        Gets a trade log from the client and uploads it and updating the database
 
+        testBtn.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+
+            }
+        });
 
         uploadTradesBtn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -85,7 +94,7 @@ public class javafxgui extends Application {
 
                 try {
                     FileChooser fileChooser = new FileChooser();
-//                    fileChooser.setInitialDirectory(defaultDirectory);
+                    fileChooser.setInitialDirectory(defaultDirectory);
                     File file = fileChooser.showOpenDialog(primaryStage);
 
                     tradeList = readData.tradeCsvParse(file.getAbsolutePath());
