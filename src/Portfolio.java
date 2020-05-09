@@ -2,7 +2,9 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.reflect.Array;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Map;
 
 /**
@@ -14,6 +16,7 @@ public class Portfolio {
     private boolean isIndividual;
     private Map<String, Security> securities;
     private double portfolioValue;
+    private LocalDateTime lastUpdated;
 
     public Portfolio (String accountNum, String accountHolder, boolean isIndividual, Map<String, Security> securities, double portfolioValue) {
         this.accountNum = accountNum;
@@ -21,6 +24,7 @@ public class Portfolio {
         this.isIndividual = isIndividual;
         this.securities = securities;
         this.portfolioValue = portfolioValue;
+        setLastUpdated();
     }
 
     // Account Number and Holder
@@ -50,7 +54,10 @@ public class Portfolio {
         return securities;
     }
 
-
+    // Updating the LastUpdated Date
+    public void setLastUpdated() {
+        lastUpdated = LocalDateTime.now();
+    }
 
     // Valuing the Portfolio
     public double getPortfolioValue() {
@@ -143,7 +150,7 @@ public class Portfolio {
     }
 
     public String toString(){
-        StringBuilder str = new StringBuilder("------" + accountHolder +"-----\n");
+        StringBuilder str = new StringBuilder("------" + accountHolder + "-----\n");
         for (Security s: securities.values()) {
             str.append(s.toString());
             str.append("\n");

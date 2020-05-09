@@ -8,14 +8,14 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXMLTest">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainController">
   <children>
     <MenuBar minHeight="10.0" prefHeight="0.0" prefWidth="640.0" style="-fx-background-color: #bfe8b5;" VBox.vgrow="NEVER" />
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="399.0" prefWidth="640.0" VBox.vgrow="ALWAYS">
          <children>
-            <Button layoutX="191.0" layoutY="182.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="258.0" style="-fx-background-color: #bfe8b5;-fx-cursor: hand;" text="Upload Today's Trades" AnchorPane.leftAnchor="191.0" AnchorPane.rightAnchor="191.0" onAction="#applyTrade" />
-            <Button layoutX="191.0" layoutY="233.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="258.0" style="-fx-background-color: #bfe8b5;-fx-cursor: hand;" text="Upload a Portfolio" AnchorPane.leftAnchor="191.0" AnchorPane.rightAnchor="191.0" onAction="#addPortfolio" />
-            <Button layoutX="191.0" layoutY="286.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="258.0" style="-fx-background-color: #bfe8b5;-fx-cursor: hand;" text="Download a Portfolio or Trade Log" AnchorPane.leftAnchor="191.0" AnchorPane.rightAnchor="191.0" />
+            <Button layoutX="191.0" layoutY="182.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="258.0" style="-fx-background-color: #bfe8b5;-fx-cursor: hand;" text="Upload Today's Trades" AnchorPane.leftAnchor="191.0" AnchorPane.rightAnchor="191.0" fx:id="applyTradeBtn" />
+            <Button layoutX="191.0" layoutY="233.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="258.0" style="-fx-background-color: #bfe8b5;-fx-cursor: hand;" text="Upload a Portfolio" AnchorPane.leftAnchor="191.0" AnchorPane.rightAnchor="191.0" fx:id="addPortfolioBtn" />
+            <Button layoutX="191.0" layoutY="286.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="258.0" style="-fx-background-color: #bfe8b5;-fx-cursor: hand;" text="Download a Portfolio or Trade Log" AnchorPane.leftAnchor="191.0" AnchorPane.rightAnchor="191.0" fx:id="tableBtn" />
             <HBox alignment="TOP_CENTER" layoutX="275.0" layoutY="51.0" prefHeight="100.0" prefWidth="89.0" AnchorPane.leftAnchor="275.0" AnchorPane.rightAnchor="275.0">
                <children>
                   <ImageView fitHeight="98.0" fitWidth="90.0">

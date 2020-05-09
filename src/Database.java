@@ -77,6 +77,9 @@ public class Database {
         portfolios.put(p.getAccountNum(), p);
     }
 
+    public void deletePortfolio (Portfolio p) {
+        portfolios.remove(p.getAccountNum());
+    }
 
     public void applyTrade (Trade t){
         for(Portfolio p : portfolios.values()){
@@ -84,6 +87,8 @@ public class Database {
         }
 
     }
+
+    @Override
     public String toString(){
         StringBuilder str = new StringBuilder("Database\n");
         for (Portfolio p: portfolios.values()) {
