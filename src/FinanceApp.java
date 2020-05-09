@@ -6,14 +6,21 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
+import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Map;
 
 /**
  * Created by AlexKatopodis on 5/8/20.
@@ -23,11 +30,57 @@ import java.util.ArrayList;
 public class FinanceApp extends Application {
 
 
-    private Stage primaryStage;
+    private static Database portfolioDatabase;
+    private static Stage primaryStage;
     private File defaultDirectory = new File("./data");
 
     public static void main(String[] args) {
         launch(args);
+    }
+
+    @Override
+    public void stop() throws Exception {
+
+
+        JSONObject data = new JSONObject();
+        JSONArray array = new JSONArray();
+        Map<String, Portfolio> portfolios = portfolioDatabase.getPortfolios();
+        for (Portfolio p : portfolios.values()){
+            JSONObject jsonPortfolio = new JSONObject();
+            jsonPortfolio.put("accountNum", p.getAccountNum());
+            jsonPortfolio.put("accountHolder", p.getAccountHolder());
+            jsonPortfolio.put("isIndividual", p.isIndividual());
+            jsonPortfolio.put("portfolioValue", p.getPortfolioValue());
+
+
+            JSONArray securities = new JSONArray();
+            for(Security s : p.getSecurities().values()){
+                JSONObject jsonSecurity = new JSONObject();
+                jsonSecurity.put("ticker", s.getTicker());
+                jsonSecurity.put("quantity", s.getQuantity());
+                jsonSecurity.put("price", s.getPrice());
+                securities.add(jsonSecurity);
+            }
+            jsonPortfolio.put("securities", securities);
+
+
+            array.add(jsonPortfolio);
+        }
+
+        String fileName = new SimpleDateFormat("yyyy-MM-dd_HH-mm'.json'").format(new Date());
+        data.put("portfolios", array);
+
+
+        try (FileWriter file =  new FileWriter(".\\data\\"+fileName, true);) {
+            file.write(data.toJSONString());
+            file.flush();
+            readData.showAlert("Database Update", fileName + " file has been database created.\n");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+        super.stop();
     }
 
     @Override
@@ -36,6 +89,19 @@ public class FinanceApp extends Application {
 //        Parent root = FXMLLoader.load(getClass().getResource("file:./styles/xml/landing.fxml"));
 //        primaryStage.setTitle("Fin-Data Application");
 //        primaryStage.setScene(new Scene);
+
+
+
+        try{
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.setInitialDirectory(new File("./data"));
+            File dbFile = fileChooser.showOpenDialog(primaryStage);
+            portfolioDatabase = new Database(dbFile.getAbsolutePath());
+
+
+        } catch(Exception e){
+            readData.showAlert("Error", "Oops something went wrong");
+        }
 
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(new URL("file:./styles/xml/landing.fxml"));
@@ -50,8 +116,10 @@ public class FinanceApp extends Application {
 
     }
 
-
-
-
+    public static Database getPortfolioDatabase() {
+        return portfolioDatabase;
+    }
 }
+
+
 

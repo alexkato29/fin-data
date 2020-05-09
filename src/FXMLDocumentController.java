@@ -22,30 +22,7 @@ public class FXMLDocumentController implements Initializable{
     public void initialize(URL location, ResourceBundle resources) {
 
         //TODO: Try to get the Parent Window into
-
-
-        try{
-
-            //Initialize File Chooser
-            FileChooser fileChooser = new FileChooser();
-
-            //Find Previous Directory
-
-            fileChooser.setInitialDirectory(new File("./data"));
-            File dbFile = fileChooser.showOpenDialog(new Stage());
-
-            //Update
-
-            portfolioDatabase = new Database(dbFile.getAbsolutePath());
-
-
-        } catch(Exception e){
-            readData.showAlert("Error", "Oops something went wrong");
-        }
-
-
-
-
+        portfolioDatabase = FinanceApp.getPortfolioDatabase();
 
     }
 
