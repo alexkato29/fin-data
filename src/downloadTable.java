@@ -20,7 +20,6 @@ public class downloadTable implements EventHandler<javafx.event.ActionEvent>{
     private HashMap<String,Portfolio> portfolios;
     public downloadTable(Stage primaryStage, HashMap<String,Portfolio> portfolios){
         this.parentStage = primaryStage;
-
         this.portfolios= portfolios;
     }
 

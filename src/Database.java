@@ -55,12 +55,7 @@ public class Database {
                 addPortfolio(newPortfolio);
             }
         } catch (Exception e) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Error");
-            alert.setHeaderText(null);
-            alert.setContentText("Database file Format is incorrect\n Restart the Program and Select the correct file");
-
-            alert.showAndWait();
+            System.out.println("something whent wrong with making database");
         }
     }
 

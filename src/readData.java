@@ -1,5 +1,7 @@
 
 
+import javafx.scene.control.Alert;
+import javafx.stage.WindowEvent;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
@@ -7,10 +9,9 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.Reader;
+
+import java.beans.EventHandler;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
@@ -19,7 +20,7 @@ import java.util.*;
 
 public class readData {
 
-    private final int ACCOUNT_NUM_COL = 0;
+
 
     public static ArrayList<Trade> tradeCsvParse(String tradeFilePath) throws IOException {
         ArrayList<Trade> csvTrades = new ArrayList<>();
@@ -62,7 +63,7 @@ public class readData {
 
 
 
-            System.out.println(firstRow);
+
             String accountNum = firstRow.get(0);
             String accountHolder = firstRow.get(3);
             Map<String, Security> securities = new HashMap<>();
@@ -82,13 +83,69 @@ public class readData {
             add = new Portfolio(accountNum, accountHolder, true, securities, totalValue );
 
             return add;
-        } catch (IOException e){
-            System.out.println("You must pick a file");
+        } catch (Exception e){
+            readData.showAlert("Error", "Something went Wrong\nreadData.portfolioCsvParse(String portfolioFilePath);");
         }
         return null;
 
 
     }
+    public static File getDirectory(String key){
+        JSONParser jsonParser = new JSONParser();
+
+
+        // TODO: Change Directory when finished         VVVVVVV
+        try (FileReader reader = new FileReader("./data/info.json")){
+
+            JSONObject obj = (JSONObject) jsonParser.parse(reader);
+
+            String dir = (String)obj.get(key);
+            return new File(dir);
+
+        } catch(Exception e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public static void editDirectory(String key, String newDirectory){
+        JSONParser jsonParser = new JSONParser();
+
+        try(FileReader reader = new FileReader("./data/info.json")){
+            JSONObject obj = (JSONObject) jsonParser.parse(reader);
+            System.out.println(obj);
+            obj.put(key, newDirectory);
+            System.out.println(obj);
+
+
+            reader.close();
+
+            FileWriter file = new FileWriter("./data/info.json", false);
+            file.write(obj.toJSONString());
+            file.close();
+
+        } catch (Exception e){
+            e.printStackTrace();
+
+        }
+
+
+
+
+
+
+    }
+
+
+
+    public static void showAlert(String title, String text){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(text);
+        alert.showAndWait();
+    }
+
 
 
     public static void jsonUpdate(String jsonDBFilePath, ArrayList<Trade> tradeList){
@@ -153,4 +210,4 @@ public class readData {
 
 
 
-    }
+}
