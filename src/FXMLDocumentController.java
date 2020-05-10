@@ -20,10 +20,7 @@ public class FXMLDocumentController implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
-        //TODO: Try to get the Parent Window into
         portfolioDatabase = FinanceApp.getPortfolioDatabase();
-
     }
 
     @FXML
@@ -34,11 +31,8 @@ public class FXMLDocumentController implements Initializable{
 
         try {
             FileChooser fileChooser = new FileChooser();
-            File previousDir =  readData.getDirectory("uploadTradesDir");
-            fileChooser.setInitialDirectory(previousDir);
             File file = fileChooser.showOpenDialog(new Stage());
 
-            readData.editDirectory("uploadTradesDir", file.getParent());
             tradeList = readData.tradeCsvParse(file.getAbsolutePath());
 
 
@@ -60,14 +54,7 @@ public class FXMLDocumentController implements Initializable{
 
         try {
             FileChooser fileChooser = new FileChooser();
-            File previousDir =  readData.getDirectory("uploadPortfolio");
-            fileChooser.setInitialDirectory(previousDir);
             File file = fileChooser.showOpenDialog(new Stage());
-            readData.editDirectory("uploadPortfolio", file.getParent());
-
-
-
-
 
             Portfolio add = readData.portfolioCsvParse(file.getAbsolutePath());
             portfolioDatabase.addPortfolio(add);
