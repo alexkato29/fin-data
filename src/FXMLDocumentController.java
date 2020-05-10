@@ -49,7 +49,8 @@ public class FXMLDocumentController implements Initializable{
 
         } catch (Exception e) {
 
-            readData.showAlert("Error", "File Not Chosen");
+            readData.showAlert("Error", "Check Console for error");
+            e.printStackTrace();
         }
     }
 

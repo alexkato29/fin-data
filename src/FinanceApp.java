@@ -95,6 +95,7 @@ public class FinanceApp extends Application {
             fileChooser.setInitialDirectory(defaultDirectory);
             File dbFile = fileChooser.showOpenDialog(primaryStage);
             portfolioDatabase = new Database(dbFile.getAbsolutePath());
+            readData.showAlert("Proceeding...", "Database has been uploaded");
 
 
         } catch(Exception e){

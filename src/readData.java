@@ -33,7 +33,10 @@ public class readData {
                 //System.out.printf("%15s %15s %15s %15s\n", csvRecord.get(0),csvRecord.get(1),csvRecord.get(2),csvRecord.get(3));
                 if (csvRecord.get(0).equals("Account #") || csvRecord.get(0).equals("") ) {
                     continue;
-                } else{
+                } else if (Character.isLetter(csvRecord.get(0).charAt(0))){
+                    break;
+                }
+                else{
                     String accountNum = csvRecord.get(0);
                     String accountHolder = csvRecord.get(2);
                     String registration = csvRecord.get(5);
