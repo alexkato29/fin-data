@@ -19,7 +19,6 @@ public class FXMLDocumentController implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
         portfolioDatabase = FinanceApp.getPortfolioDatabase();
         primaryStage = FinanceApp.getPrimaryStage();
     }
@@ -32,11 +31,8 @@ public class FXMLDocumentController implements Initializable{
 
         try {
             FileChooser fileChooser = new FileChooser();
-//            File previousDir =  readData.getDirectory("uploadTradesDir");
-//            fileChooser.setInitialDirectory(previousDir);
             File file = fileChooser.showOpenDialog(primaryStage);
 
-//            readData.editDirectory("uploadTradesDir", file.getParent());
             tradeList = readData.tradeCsvParse(file.getAbsolutePath());
 
 
@@ -59,14 +55,7 @@ public class FXMLDocumentController implements Initializable{
         event.consume();
         try {
             FileChooser fileChooser = new FileChooser();
-//            File previousDir =  readData.getDirectory("uploadPortfolio");
-//            fileChooser.setInitialDirectory(previousDir);
             File file = fileChooser.showOpenDialog(primaryStage);
-//            readData.editDirectory("uploadPortfolio", file.getParent());
-
-
-
-
 
             Portfolio add = readData.portfolioCsvParse(file.getAbsolutePath());
             portfolioDatabase.addPortfolio(add);
