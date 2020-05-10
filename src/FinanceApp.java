@@ -26,6 +26,7 @@ import java.util.Map;
  * Created by AlexKatopodis on 5/8/20.
  */
 
+// THIS IS THE
 public class FinanceApp extends Application {
 
 
@@ -50,6 +51,7 @@ public class FinanceApp extends Application {
             jsonPortfolio.put("accountHolder", p.getAccountHolder());
             jsonPortfolio.put("isIndividual", p.isIndividual());
             jsonPortfolio.put("portfolioValue", p.getPortfolioValue());
+//            jsonPortfolio.put("lastUpdated", p.getLastUpdated());
 
 
             JSONArray securities = new JSONArray();
@@ -66,15 +68,16 @@ public class FinanceApp extends Application {
             array.add(jsonPortfolio);
         }
 
-        String fileName = new SimpleDateFormat("MM-dd-yyyy_HH-mm'.json'").format(new Date());
+        String fileName = new SimpleDateFormat("yyyy-MM-dd_HH-mm'.json'").format(new Date());
         data.put("portfolios", array);
 
 
-        try (FileWriter file =  new FileWriter("./data/"+fileName, true);) {
+        try (FileWriter file =  new FileWriter(".\\data\\"+fileName, true);) {
             file.write(data.toJSONString());
             file.flush();
             readData.showAlert("Database Update", fileName + " file has been database created.\n");
         } catch (IOException e) {
+            readData.showAlert("Error", "Check Console for Error");
             e.printStackTrace();
         }
 
@@ -84,6 +87,21 @@ public class FinanceApp extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+
+
+        this.primaryStage = primaryStage;
+        try{
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.setInitialDirectory(defaultDirectory);
+            File dbFile = fileChooser.showOpenDialog(primaryStage);
+            portfolioDatabase = new Database(dbFile.getAbsolutePath());
+
+
+        } catch(Exception e){
+            readData.showAlert("Error", "Check Console for Error");
+            e.printStackTrace();
+        }
+
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(new URL("file:./styles/xml/landing.fxml"));
 
@@ -94,22 +112,13 @@ public class FinanceApp extends Application {
         primaryStage.setTitle("Portfolio Manager");
         primaryStage.show();
 
-        try{
-            readData.showAlert("Database Chooser", "Please choose the most recent or desired database.");
-            FileChooser fileChooser = new FileChooser();
-            fileChooser.setInitialDirectory(new File("./data"));
-            File dbFile = fileChooser.showOpenDialog(primaryStage);
-            portfolioDatabase = new Database(dbFile.getAbsolutePath());
-            readData.showAlert("Database Chooser", "Database chosen successfully.");
 
-
-        } catch(Exception e){
-            readData.showAlert("Error", "Oops something went wrong");
-        }
     }
-
     public static Database getPortfolioDatabase() {
         return portfolioDatabase;
+    }
+    public static Stage getPrimaryStage(){
+        return primaryStage;
     }
 }
 
