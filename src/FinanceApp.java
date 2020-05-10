@@ -84,7 +84,6 @@ public class FinanceApp extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(new URL("file:./styles/xml/landing.fxml"));
 
