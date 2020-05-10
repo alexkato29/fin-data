@@ -51,6 +51,7 @@ public class FinanceApp extends Application {
             jsonPortfolio.put("accountHolder", p.getAccountHolder());
             jsonPortfolio.put("isIndividual", p.isIndividual());
             jsonPortfolio.put("portfolioValue", p.getPortfolioValue());
+//            jsonPortfolio.put("lastUpdated", p.getLastUpdated());
 
 
             JSONArray securities = new JSONArray();
@@ -76,6 +77,7 @@ public class FinanceApp extends Application {
             file.flush();
             readData.showAlert("Database Update", fileName + " file has been database created.\n");
         } catch (IOException e) {
+            readData.showAlert("Error", "Check Console for Error");
             e.printStackTrace();
         }
 
@@ -86,21 +88,18 @@ public class FinanceApp extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-//        Parent root = FXMLLoader.load(getClass().getResource("file:./styles/xml/landing.fxml"));
-//        primaryStage.setTitle("Fin-Data Application");
-//        primaryStage.setScene(new Scene);
 
-
-
+        this.primaryStage = primaryStage;
         try{
             FileChooser fileChooser = new FileChooser();
-            fileChooser.setInitialDirectory(new File("./data"));
+            fileChooser.setInitialDirectory(defaultDirectory);
             File dbFile = fileChooser.showOpenDialog(primaryStage);
             portfolioDatabase = new Database(dbFile.getAbsolutePath());
 
 
         } catch(Exception e){
-            readData.showAlert("Error", "Oops something went wrong");
+            readData.showAlert("Error", "Check Console for Error");
+            e.printStackTrace();
         }
 
         FXMLLoader loader = new FXMLLoader();
@@ -115,9 +114,11 @@ public class FinanceApp extends Application {
 
 
     }
-
     public static Database getPortfolioDatabase() {
         return portfolioDatabase;
+    }
+    public static Stage getPrimaryStage(){
+        return primaryStage;
     }
 }
 

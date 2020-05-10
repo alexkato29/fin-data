@@ -15,15 +15,13 @@ import java.util.ResourceBundle;
 public class FXMLDocumentController implements Initializable{
 
     private Database portfolioDatabase;
-    @FXML javafx.scene.control.Button closeButton;
-
+    private Stage primaryStage;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        //TODO: Try to get the Parent Window into
         portfolioDatabase = FinanceApp.getPortfolioDatabase();
-
+        primaryStage = FinanceApp.getPrimaryStage();
     }
 
     @FXML
@@ -34,11 +32,11 @@ public class FXMLDocumentController implements Initializable{
 
         try {
             FileChooser fileChooser = new FileChooser();
-            File previousDir =  readData.getDirectory("uploadTradesDir");
-            fileChooser.setInitialDirectory(previousDir);
-            File file = fileChooser.showOpenDialog(new Stage());
+//            File previousDir =  readData.getDirectory("uploadTradesDir");
+//            fileChooser.setInitialDirectory(previousDir);
+            File file = fileChooser.showOpenDialog(primaryStage);
 
-            readData.editDirectory("uploadTradesDir", file.getParent());
+//            readData.editDirectory("uploadTradesDir", file.getParent());
             tradeList = readData.tradeCsvParse(file.getAbsolutePath());
 
 
@@ -50,6 +48,7 @@ public class FXMLDocumentController implements Initializable{
 
 
         } catch (Exception e) {
+
             readData.showAlert("Error", "File Not Chosen");
         }
     }
@@ -57,13 +56,13 @@ public class FXMLDocumentController implements Initializable{
 
     @FXML
     public void addPortfolio(ActionEvent event) {
-
+        event.consume();
         try {
             FileChooser fileChooser = new FileChooser();
-            File previousDir =  readData.getDirectory("uploadPortfolio");
-            fileChooser.setInitialDirectory(previousDir);
-            File file = fileChooser.showOpenDialog(new Stage());
-            readData.editDirectory("uploadPortfolio", file.getParent());
+//            File previousDir =  readData.getDirectory("uploadPortfolio");
+//            fileChooser.setInitialDirectory(previousDir);
+            File file = fileChooser.showOpenDialog(primaryStage);
+//            readData.editDirectory("uploadPortfolio", file.getParent());
 
 
 
