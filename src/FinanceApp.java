@@ -88,11 +88,10 @@ public class FinanceApp extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-
         this.primaryStage = primaryStage;
 
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(new URL("file:./styles/xml/tableview.fxml"));
+        loader.setLocation(new URL("file:./styles/xml/landing.fxml"));
 
         VBox vbox = loader.<VBox>load();
 
@@ -114,6 +113,7 @@ public class FinanceApp extends Application {
             readData.showAlert("Error", "Check Console for Error");
             e.printStackTrace();
         }
+
     }
     public static Database getPortfolioDatabase() {
         return portfolioDatabase;
