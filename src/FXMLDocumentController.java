@@ -1,26 +1,55 @@
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.layout.VBox;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-
 
 import java.io.File;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class FXMLDocumentController implements Initializable{
+public class FXMLDocumentController implements Initializable {
 
     private Database portfolioDatabase;
     private Stage primaryStage;
+
+    @FXML
+    TableView table;
+
+    @FXML
+    TableColumn names;
+    @FXML
+    TableColumn nums;
+    @FXML
+    TableColumn port;
+    @FXML
+    TableColumn tl;
+    @FXML
+    TableColumn del;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         portfolioDatabase = FinanceApp.getPortfolioDatabase();
         primaryStage = FinanceApp.getPrimaryStage();
+
+        ObservableList<Row> rows = FXCollections.observableArrayList();
+
+        for (Portfolio p : portfolioDatabase.getPortfolios().values())
+            rows.add(new Row(p.getAccountHolder(), p.getAccountNum()));
+
+        names.setCellValueFactory(new PropertyValueFactory<Row, String>("names"));
+        nums.setCellValueFactory(new PropertyValueFactory<Row, String>("nums"));
+        port.setCellValueFactory(new PropertyValueFactory<Row, String>("port"));
+        tl.setCellValueFactory(new PropertyValueFactory<Row, String>("tl"));
+        del.setCellValueFactory(new PropertyValueFactory<Row, String>("del"));
+
+        TableView.setItems(rows);
     }
 
     @FXML
@@ -36,7 +65,7 @@ public class FXMLDocumentController implements Initializable{
             tradeList = readData.tradeCsvParse(file.getAbsolutePath());
 
 
-            for (Trade t: tradeList){
+            for (Trade t : tradeList) {
                 portfolioDatabase.applyTrade(t);
             }
 
@@ -63,23 +92,8 @@ public class FXMLDocumentController implements Initializable{
             readData.showAlert("Add Portfolio", "Portfolio has been added");
 
 
-        } catch (Exception e){
+        } catch (Exception e) {
             readData.showAlert("Error", "File Not Chosen");
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

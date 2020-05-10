@@ -90,21 +90,9 @@ public class FinanceApp extends Application {
 
 
         this.primaryStage = primaryStage;
-        try{
-            FileChooser fileChooser = new FileChooser();
-            fileChooser.setInitialDirectory(defaultDirectory);
-            File dbFile = fileChooser.showOpenDialog(primaryStage);
-            portfolioDatabase = new Database(dbFile.getAbsolutePath());
-            readData.showAlert("Proceeding...", "Database has been uploaded");
-
-
-        } catch(Exception e){
-            readData.showAlert("Error", "Check Console for Error");
-            e.printStackTrace();
-        }
 
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(new URL("file:./styles/xml/landing.fxml"));
+        loader.setLocation(new URL("file:./styles/xml/tableview.fxml"));
 
         VBox vbox = loader.<VBox>load();
 
@@ -113,7 +101,19 @@ public class FinanceApp extends Application {
         primaryStage.setTitle("Portfolio Manager");
         primaryStage.show();
 
+        try{
+            readData.showAlert("Database Chooser", "Please choose the most recent or desired database.");
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.setInitialDirectory(defaultDirectory);
+            File dbFile = fileChooser.showOpenDialog(primaryStage);
+            portfolioDatabase = new Database(dbFile.getAbsolutePath());
+            readData.showAlert("Proceeding...", "Database has been uploaded.");
 
+
+        } catch(Exception e){
+            readData.showAlert("Error", "Check Console for Error");
+            e.printStackTrace();
+        }
     }
     public static Database getPortfolioDatabase() {
         return portfolioDatabase;
