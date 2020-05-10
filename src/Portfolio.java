@@ -16,7 +16,7 @@ public class Portfolio {
     private boolean isIndividual;
     private Map<String, Security> securities;
     private double portfolioValue;
-    private LocalDateTime lastUpdated;
+    private Date lastUpdated;
 
     public Portfolio (String accountNum, String accountHolder, boolean isIndividual, Map<String, Security> securities, double portfolioValue) {
         this.accountNum = accountNum;
@@ -56,7 +56,12 @@ public class Portfolio {
 
     // Updating the LastUpdated Date
     public void setLastUpdated() {
-        lastUpdated = LocalDateTime.now();
+        lastUpdated = new Date();
+    }
+
+    // Get the LastUpdated Date
+    public Date getLastUpdated() {
+        return lastUpdated;
     }
 
     // Valuing the Portfolio
