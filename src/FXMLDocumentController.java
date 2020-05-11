@@ -19,18 +19,13 @@ public class FXMLDocumentController implements Initializable {
     private Database portfolioDatabase;
     private Stage primaryStage;
 
-    @FXML
-    TableView table;
-    @FXML
-    TableColumn names;
-    @FXML
-    TableColumn nums;
-    @FXML
-    TableColumn port;
-    @FXML
-    TableColumn tl;
-    @FXML
-    TableColumn del;
+    @FXML TableView table;
+
+    @FXML TableColumn names;
+    @FXML TableColumn nums;
+    @FXML TableColumn port;
+    @FXML TableColumn tl;
+    @FXML TableColumn del;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -42,13 +37,13 @@ public class FXMLDocumentController implements Initializable {
         for (Portfolio p : portfolioDatabase.getPortfolios().values())
             rows.add(new Row(p.getAccountHolder(), p.getAccountNum()));
 
-        names.setCellValueFactory(new PropertyValueFactory<Row, String>("names"));
-        nums.setCellValueFactory(new PropertyValueFactory<Row, String>("nums"));
-        port.setCellValueFactory(new PropertyValueFactory<Row, String>("port"));
-        tl.setCellValueFactory(new PropertyValueFactory<Row, String>("tl"));
-        del.setCellValueFactory(new PropertyValueFactory<Row, String>("del"));
+        names.setCellValueFactory(new PropertyValueFactory<Row, String>("name"));
+        nums.setCellValueFactory(new PropertyValueFactory<Row, String>("accountNum"));
+        port.setCellValueFactory(new PropertyValueFactory<Row, String>("downloadPortfolio"));
+        tl.setCellValueFactory(new PropertyValueFactory<Row, String>("downloadTradeLog"));
+        del.setCellValueFactory(new PropertyValueFactory<Row, String>("delete"));
 
-        TableView.setItems(rows);
+        table.setItems(rows);
     }
 
     @FXML

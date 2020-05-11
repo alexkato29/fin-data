@@ -1,39 +1,39 @@
 import javafx.beans.property.SimpleStringProperty;
+import javafx.scene.control.Button;
 
-import java.awt.*;
 
 /**
  * Created by AlexKatopodis on 5/10/20.
  */
 public class Row {
     private SimpleStringProperty name;
-    private SimpleStringProperty accntNum;
+    private SimpleStringProperty accountNum;
     private Button downloadPortfolio;
     private Button downloadTradeLog;
     private Button delete;
 
     public Row(String name, String accntNum) {
         this.name = new SimpleStringProperty(name);
-        this.accntNum = new SimpleStringProperty(accntNum);
+        this.accountNum = new SimpleStringProperty(accntNum);
         downloadPortfolio = new Button("Portfolio");
         downloadTradeLog = new Button("Trade Log");
         delete = new Button("Delete");
     }
 
-    public SimpleStringProperty getName() {
-        return name;
+    public String getName() {
+        return name.get();
     }
 
     public void setName(String name) {
         this.name = new SimpleStringProperty(name);
     }
 
-    public SimpleStringProperty getAccountNum() {
-        return accntNum;
+    public String getAccountNum() {
+        return accountNum.get();
     }
 
     public void setAccountNum(String accntNum) {
-        this.accntNum = new SimpleStringProperty(accntNum);
+        this.accountNum = new SimpleStringProperty(accntNum);
     }
 
     public Button getDownloadPortfolio() {
