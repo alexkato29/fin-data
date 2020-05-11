@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91570491-00e6-425e-a1f3-7a15f28f9694" name="Default Changelist" comment="Default Changelist">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/TableviewController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/FXMLDocumentController.java" afterPath="$PROJECT_DIR$/src/LandingController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FinanceApp.java" afterPath="$PROJECT_DIR$/src/FinanceApp.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/styles/xml/landing.fxml" afterPath="$PROJECT_DIR$/styles/xml/landing.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/styles/xml/tableview.fxml" afterPath="$PROJECT_DIR$/styles/xml/tableview.fxml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -49,11 +45,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TableviewController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TableviewController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/TableviewController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="29" column="9" lean-forward="true" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
+            <state relative-caret-position="795">
+              <caret line="53" column="1" lean-forward="true" selection-start-line="53" selection-start-column="1" selection-end-line="53" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -86,14 +82,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FinanceApp.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="FinanceApp.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/FinanceApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="101" column="32" lean-forward="true" selection-start-line="101" selection-start-column="32" selection-end-line="101" selection-end-column="32" />
+            <state relative-caret-position="347">
+              <caret line="54" column="0" lean-forward="true" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
               <folding>
-                <element signature="e#3601#3607#0" expanded="true" />
+                <element signature="e#3599#3605#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="javafxgui.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/javafxgui.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1018">
+              <caret line="119" column="0" lean-forward="true" selection-start-line="119" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -204,12 +210,12 @@
         <option value="$PROJECT_DIR$/src/Portfolio.java" />
         <option value="$PROJECT_DIR$/src/TableRow.java" />
         <option value="$PROJECT_DIR$/src/Row.java" />
-        <option value="$PROJECT_DIR$/src/FinanceApp.java" />
         <option value="$PROJECT_DIR$/styles/xml/landing.fxml" />
         <option value="$PROJECT_DIR$/src/FXMLDocumentController.java" />
         <option value="$PROJECT_DIR$/styles/xml/tableview.fxml" />
         <option value="$PROJECT_DIR$/src/LandingController.java" />
         <option value="$PROJECT_DIR$/src/TableviewController.java" />
+        <option value="$PROJECT_DIR$/src/FinanceApp.java" />
       </list>
     </option>
   </component>
@@ -847,7 +853,7 @@
       <workItem from="1589033313683" duration="8319000" />
       <workItem from="1589121671649" duration="1561000" />
       <workItem from="1589123418364" duration="6558000" />
-      <workItem from="1589208816358" duration="1322000" />
+      <workItem from="1589208816358" duration="1413000" />
     </task>
     <task id="LOCAL-00001" summary="test3 file added">
       <created>1574359186841</created>
@@ -1185,11 +1191,18 @@
       <option name="project" value="LOCAL" />
       <updated>1589209008134</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="Default Changelist">
+      <created>1589210152209</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1589210152209</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38535000" />
+    <option name="totallyTimeSpent" value="38626000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1920" height="1009" extended-state="6" />
@@ -1418,16 +1431,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/javafxgui.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="119" column="23" lean-forward="true" selection-start-line="119" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/MainController.java" />
     <entry file="file://$PROJECT_DIR$/src/ControllerHelper.java" />
     <entry file="file://$PROJECT_DIR$/data/sample-portfolio.csv">
@@ -1517,16 +1520,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/FinanceApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="101" column="32" lean-forward="true" selection-start-line="101" selection-start-column="32" selection-end-line="101" selection-end-column="32" />
-          <folding>
-            <element signature="e#3601#3607#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/LandingController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="467">
@@ -1540,10 +1533,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/TableviewController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="29" column="9" lean-forward="true" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
+        <state relative-caret-position="795">
+          <caret line="53" column="1" lean-forward="true" selection-start-line="53" selection-start-column="1" selection-end-line="53" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/javafxgui.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1018">
+          <caret line="119" column="0" lean-forward="true" selection-start-line="119" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FinanceApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="54" column="0" lean-forward="true" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+          <folding>
+            <element signature="e#3599#3605#0" expanded="true" />
           </folding>
         </state>
       </provider>
