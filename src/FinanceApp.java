@@ -105,7 +105,7 @@ public class FinanceApp extends Application {
         this.primaryStage = primaryStage;
 
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(new URL("file:./styles/xml/tableview.fxml"));
+        loader.setLocation(new URL("file:./styles/xml/landing.fxml"));
 
         VBox vbox = loader.<VBox>load();
 
@@ -113,10 +113,8 @@ public class FinanceApp extends Application {
         primaryStage.setScene(scene);
         primaryStage.setTitle("Portfolio Manager");
         primaryStage.show();
-
-
-
     }
+
     public static Database getPortfolioDatabase() {
         return portfolioDatabase;
     }
