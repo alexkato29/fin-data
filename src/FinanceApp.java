@@ -51,7 +51,7 @@ public class FinanceApp extends Application {
             jsonPortfolio.put("accountHolder", p.getAccountHolder());
             jsonPortfolio.put("isIndividual", p.isIndividual());
             jsonPortfolio.put("portfolioValue", p.getPortfolioValue());
-//            jsonPortfolio.put("lastUpdated", p.getLastUpdated());
+            jsonPortfolio.put("lastUpdated", p.getLastUpdated());
 
 
             JSONArray securities = new JSONArray();

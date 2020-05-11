@@ -12,6 +12,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
+import javax.swing.*;
 import java.io.File;
 import java.net.URL;
 import java.util.ArrayList;
@@ -50,5 +51,20 @@ public class TableviewController implements Initializable {
         del.setCellValueFactory(new PropertyValueFactory<Row, String>("delete"));
 
         table.setItems(rows);
+    }
+
+    @FXML
+    public void downloadPortfolio(ActionEvent event) {
+        // TODO: Make the button download the given portfolio's CSV using the method "export" inside of portfolio.
+    }
+
+    @FXML
+    public void downloadTL(ActionEvent event) {
+        // TODO: Make this button download the Trade Log for the given portfolio using the ExportTrades class
+    }
+
+    @FXML
+    public void delete(ActionEvent event){
+        // TODO: Make this button delete a portfolio using the "delete" method in Database
     }
 }
