@@ -88,18 +88,6 @@ public class FinanceApp extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-        this.primaryStage = primaryStage;
-
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(new URL("file:./styles/xml/landing.fxml"));
-
-        VBox vbox = loader.<VBox>load();
-
-        Scene scene = new Scene(vbox);
-        primaryStage.setScene(scene);
-        primaryStage.setTitle("Portfolio Manager");
-        primaryStage.show();
-
         try{
             readData.showAlert("Database Chooser", "Please choose the most recent or desired database.");
             FileChooser fileChooser = new FileChooser();
@@ -113,6 +101,20 @@ public class FinanceApp extends Application {
             readData.showAlert("Error", "Check Console for Error");
             e.printStackTrace();
         }
+
+        this.primaryStage = primaryStage;
+
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(new URL("file:./styles/xml/tableview.fxml"));
+
+        VBox vbox = loader.<VBox>load();
+
+        Scene scene = new Scene(vbox);
+        primaryStage.setScene(scene);
+        primaryStage.setTitle("Portfolio Manager");
+        primaryStage.show();
+
+
 
     }
     public static Database getPortfolioDatabase() {
