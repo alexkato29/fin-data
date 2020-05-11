@@ -21,7 +21,6 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     TableView table;
-
     @FXML
     TableColumn names;
     @FXML
