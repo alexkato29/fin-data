@@ -12,12 +12,12 @@ public class Row {
     private Button downloadTradeLog;
     private Button delete;
 
-    public Row(String name, String accntNum) {
+    public Row(String name, String accntNum, Button downloadPortfolioBtn, Button downloadTradeLogBtn, Button deleteBtn) {
         this.name = new SimpleStringProperty(name);
         this.accountNum = new SimpleStringProperty(accntNum);
-        downloadPortfolio = new Button("Portfolio");
-        downloadTradeLog = new Button("Trade Log");
-        delete = new Button("Delete");
+        downloadPortfolio = downloadPortfolioBtn;
+        downloadTradeLog = downloadTradeLogBtn;
+        delete = deleteBtn;
     }
 
     public String getName() {
