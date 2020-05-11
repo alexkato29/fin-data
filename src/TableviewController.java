@@ -10,6 +10,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
+import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
@@ -17,6 +18,7 @@ import javax.swing.*;
 import java.io.File;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.ResourceBundle;
 
 /**
@@ -25,6 +27,8 @@ import java.util.ResourceBundle;
 public class TableviewController implements Initializable {
 
     private Database portfolioDatabase;
+    private ObservableList<Row> rows;
+    private HashMap<Button, Portfolio> connection;
 
     @FXML
     TableView table;
@@ -40,8 +44,10 @@ public class TableviewController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         portfolioDatabase = FinanceApp.getPortfolioDatabase();
 
-        ObservableList<Row> rows = FXCollections.observableArrayList();
 
+
+        rows = FXCollections.observableArrayList();
+        connection = new HashMap<>();
 
         for (Portfolio p : portfolioDatabase.getPortfolios().values()){
 
@@ -51,6 +57,11 @@ public class TableviewController implements Initializable {
             tbutton.setOnAction(this::downloadTL);
             Button dbutton  = new Button("Delete");
             dbutton.setOnAction(this::delete);
+            connection.put(pbutton, p);
+            connection.put(tbutton, p);
+            connection.put(dbutton, p);
+
+
             rows.add(new Row(p.getAccountHolder(), p.getAccountNum(), pbutton, tbutton, dbutton ) );
 //            rows.add(new Row(p.getAccountHolder(), p.getAccountNum(), new Button("hello"), new Button("hello"), new Button("hello") ) );
         }
@@ -68,24 +79,27 @@ public class TableviewController implements Initializable {
     @FXML
     public void downloadPortfolio(ActionEvent event) {
         // TODO: Make the button download the given portfolio's CSV using the method "export" inside of portfolio.
-        System.out.println("p");
-        System.out.println(event.getSource());
-        System.out.println(event);
+        Portfolio p = connection.get(event.getSource());
+        DirectoryChooser dirchooser = new DirectoryChooser();
+        File saveFolder = dirchooser.showDialog(new Stage());
+        p.export(saveFolder);
+
     }
 
     @FXML
     public void downloadTL(ActionEvent event) {
         // TODO: Make this button download the Trade Log for the given portfolio using the ExportTrades class
-        System.out.println("t");
-        System.out.println(event.getSource());
-        System.out.println(event);
+        Portfolio p = connection.get(event.getSource());
+        exportTrades E = new exportTrades(new Stage());
+        E.export(p.getAccountNum());
     }
 
     @FXML
     public void delete(ActionEvent event){
         // TODO: Make this button delete a portfolio using the "delete" method in Database
-        System.out.println("d");
-        System.out.println(event.getSource());
-        System.out.println(event);
+
+//        Portfolio p = connection.get(event.getSource());
+//        portfolioDatabase.deletePortfolio(p);
+//        rows.remove()
     }
 }
