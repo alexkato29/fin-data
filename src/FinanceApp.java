@@ -72,7 +72,7 @@ public class FinanceApp extends Application {
         data.put("portfolios", array);
 
 
-        try (FileWriter file =  new FileWriter(".\\data\\"+fileName, true);) {
+        try (FileWriter file =  new FileWriter("./data/"+fileName, true);) {
             file.write(data.toJSONString());
             file.flush();
             readData.showAlert("Database Update", fileName + " file has been database created.\n");
@@ -108,6 +108,8 @@ public class FinanceApp extends Application {
         loader.setLocation(new URL("file:./styles/xml/landing.fxml"));
 
         VBox vbox = loader.<VBox>load();
+
+        // readData.showAlert("Test", primaryStage.toString());
 
         Scene scene = new Scene(vbox);
         primaryStage.setScene(scene);

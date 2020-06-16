@@ -129,7 +129,7 @@ public class Portfolio {
 
         try {
             System.out.println(defaultDirectory.getAbsolutePath());
-            FileWriter csvWriter = new FileWriter(defaultDirectory.getAbsoluteFile() + "\\" + getAccountHolder() +"_portfolio.csv");
+            FileWriter csvWriter = new FileWriter(defaultDirectory.getAbsoluteFile() + "/" + getAccountHolder() +"_portfolio.csv");
             csvWriter.append("Ticker");
             csvWriter.append(",");
             csvWriter.append("Quantity");

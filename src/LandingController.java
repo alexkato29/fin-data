@@ -16,6 +16,7 @@ public class LandingController implements Initializable {
 
     private Database portfolioDatabase;
     private Stage primaryStage;
+    private static Stage renderTable;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -77,9 +78,13 @@ public class LandingController implements Initializable {
 
         Scene scene = new Scene(vbox);
 
-        Stage renderTable = new Stage();
+        renderTable = new Stage();
         renderTable.setScene(scene);
         renderTable.setTitle("Portfolio Manager");
         renderTable.show();
+    }
+
+    public static Stage getPrimaryStage() {
+        return renderTable;
     }
 }

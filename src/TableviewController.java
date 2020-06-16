@@ -16,6 +16,8 @@ import javafx.stage.Stage;
 
 import javax.swing.*;
 import java.io.File;
+import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -44,28 +46,23 @@ public class TableviewController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         portfolioDatabase = FinanceApp.getPortfolioDatabase();
 
-
-
         rows = FXCollections.observableArrayList();
         connection = new HashMap<>();
 
         for (Portfolio p : portfolioDatabase.getPortfolios().values()){
-
-            Button pbutton  = new Button("Portfolio");
+            Button pbutton = new Button("Portfolio");
             pbutton.setOnAction(this::downloadPortfolio);
-            Button tbutton  = new Button("Trade Log");
+            Button tbutton = new Button("Trade Log");
             tbutton.setOnAction(this::downloadTL);
-            Button dbutton  = new Button("Delete");
+            Button dbutton = new Button("Delete");
             dbutton.setOnAction(this::delete);
             connection.put(pbutton, p);
             connection.put(tbutton, p);
             connection.put(dbutton, p);
 
-
             rows.add(new Row(p.getAccountHolder(), p.getAccountNum(), pbutton, tbutton, dbutton ) );
 //            rows.add(new Row(p.getAccountHolder(), p.getAccountNum(), new Button("hello"), new Button("hello"), new Button("hello") ) );
         }
-
 
         names.setCellValueFactory(new PropertyValueFactory<Row, String>("name"));
         nums.setCellValueFactory(new PropertyValueFactory<Row, String>("accountNum"));
@@ -95,11 +92,31 @@ public class TableviewController implements Initializable {
     }
 
     @FXML
-    public void delete(ActionEvent event){
+    public void delete(ActionEvent event)  {
         // TODO: Make this button delete a portfolio using the "delete" method in Database
 
-//        Portfolio p = connection.get(event.getSource());
-//        portfolioDatabase.deletePortfolio(p);
-//        rows.remove()
+        if (!readData.showConfirmation("Delete Portfolio", "Are you sure you want to delete this portfolio?"))
+            return;
+
+        Portfolio p = connection.get(event.getSource());
+        portfolioDatabase.deletePortfolio(p);
+
+        FXMLLoader loader = new FXMLLoader();
+        try {
+            loader.setLocation(new URL("file:./styles/xml/tableview.fxml"));
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            VBox vbox = loader.<VBox>load();
+            Scene scene = new Scene(vbox);
+            Stage primaryStage = LandingController.getPrimaryStage();
+            primaryStage.setScene(scene);
+            primaryStage.setTitle("Portfolio Manager");
+            primaryStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

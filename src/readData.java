@@ -1,6 +1,7 @@
 
 
 import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.stage.WindowEvent;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
@@ -147,6 +148,15 @@ public class readData {
         alert.setHeaderText(null);
         alert.setContentText(text);
         alert.showAndWait();
+    }
+
+    // Returns if person presses ok
+    public static boolean showConfirmation(String title, String text) {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(text);
+        return (alert.showAndWait()).get() == ButtonType.OK;
     }
 
 

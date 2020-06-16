@@ -30,10 +30,11 @@ public class exportTrades {
         HashSet<String> accountNumbers = new HashSet<>();
 
         try {
+            readData.showAlert("Trade Log Selector", "Please choose a trade log that you'd like to format.");
             tradeList = readData.tradeCsvParse(file.getAbsolutePath());
             DirectoryChooser dirchooser = new DirectoryChooser();
             File directory = dirchooser.showDialog(parentStage);
-            FileWriter csvWriter = new FileWriter( directory.getAbsoluteFile() + "\\" + accountNum+"_trade.csv");
+            FileWriter csvWriter = new FileWriter( directory.getAbsoluteFile() + "/" + accountNum+"_trade.csv");
             csvWriter.append("Ticker");
             csvWriter.append(",");
             csvWriter.append("Quantity");
