@@ -94,6 +94,9 @@ public class readData {
 
 
     }
+
+
+
     public static File getDirectory(String key){
         JSONParser jsonParser = new JSONParser();
 
@@ -111,7 +114,6 @@ public class readData {
         }
         return null;
     }
-
     public static void editDirectory(String key, String newDirectory){
         JSONParser jsonParser = new JSONParser();
 
@@ -139,9 +141,6 @@ public class readData {
 
 
     }
-
-
-
     public static void showAlert(String title, String text){
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(title);
@@ -149,7 +148,6 @@ public class readData {
         alert.setContentText(text);
         alert.showAndWait();
     }
-
     // Returns if person presses ok
     public static boolean showConfirmation(String title, String text) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
@@ -158,9 +156,6 @@ public class readData {
         alert.setContentText(text);
         return (alert.showAndWait()).get() == ButtonType.OK;
     }
-
-
-
     public static void jsonUpdate(String jsonDBFilePath, ArrayList<Trade> tradeList){
 
         try (Reader reader = new FileReader(jsonDBFilePath)) {
