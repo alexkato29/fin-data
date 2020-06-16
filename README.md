@@ -11,15 +11,15 @@ Note: The *data* and *styles* folderas well as the .jar file must stay in the sa
 #### Dependencies
 The application is dependent on two I/O libraries
 - JSON.Simple
--- Documentaion: http://alex-public-doc.s3.amazonaws.com/json_simple-1.1/index.html
--- Download: https://code.google.com/archive/p/json-simple/downloads
+    - Documentaion: http://alex-public-doc.s3.amazonaws.com/json_simple-1.1/index.html
+    - Download: https://code.google.com/archive/p/json-simple/downloads
 - Commons Apache CSV
--- Documentaion: https://commons.apache.org/proper/commons-csv/
--- Download: https://commons.apache.org/proper/commons-csv/download_csv.cgi
+    - Documentaion: https://commons.apache.org/proper/commons-csv/
+    - Download: https://commons.apache.org/proper/commons-csv/download_csv.cgi
 It is also dependent on a GUI library
 - JavaFX
--- Documentation: https://openjfx.io/
--- Download: https://gluonhq.com/products/javafx/
+     - Documentation: https://openjfx.io/
+     - Download: https://gluonhq.com/products/javafx/
 
 #### Objects
 So we have 4 main objects
